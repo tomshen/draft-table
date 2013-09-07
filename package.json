@@ -12,7 +12,8 @@
     "coffee-script": "~1.6.3",
     "mongoskin": "~0.6.0",
     "ejs": "~0.8.4",
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "ejs-locals": "~1.0.2"
   },
   "engine": "0.10.x"
 }

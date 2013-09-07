@@ -7,6 +7,7 @@ models = require './models'
 
 app = express()
 
+app.engine 'ejs', require('ejs-locals')
 app.set 'view engine', 'ejs'
 app.set 'views', __dirname + '/views'
 
