@@ -34,13 +34,13 @@ app.get '/:school/:plan/proposal', (req, res) ->
 
 # Views for POSTing
 app.post '/school/:school/plan/new', (req, res) ->
-  models.School.addPlan req.params.school, req.body, (id) -> res.send id
+  models.School.addPlan req.params.school, req.body, req.files, (id) -> res.send id
 
 app.post '/plan/:plan/support', (req, res) ->
   models.Plan.addSupporter req.params.plan, req.body
 
 app.post '/plan/:plan/proposal/new', (req, res) ->
-  models.Plan.addProposal req.params.plan, req.body, (id) -> res.send id
+  models.Plan.addProposal req.params.plan, req.body, req.files, (id) -> res.send id
 
 app.post '/proposal/:proposal/support', (req, res) ->
   models.Proposal.addSupporter req.params.proposal, req.body

@@ -53,7 +53,7 @@
   });
 
   app.post('/school/:school/plan/new', function(req, res) {
-    return models.School.addPlan(req.params.school, req.body, function(id) {
+    return models.School.addPlan(req.params.school, req.body, req.files, function(id) {
       return res.send(id);
     });
   });
@@ -63,7 +63,7 @@
   });
 
   app.post('/plan/:plan/proposal/new', function(req, res) {
-    return models.Plan.addProposal(req.params.plan, req.body, function(id) {
+    return models.Plan.addProposal(req.params.plan, req.body, req.files, function(id) {
       return res.send(id);
     });
   });

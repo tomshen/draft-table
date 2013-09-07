@@ -13,7 +13,9 @@
     "mongoskin": "~0.6.0",
     "ejs": "~0.8.4",
     "underscore": "~1.5.1",
-    "ejs-locals": "~1.0.2"
+    "ejs-locals": "~1.0.2",
+    "form-data": "~0.1.1",
+    "request": "~2.27.0"
   },
   "engine": "0.10.x"
 }

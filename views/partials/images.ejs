@@ -1,0 +1,6 @@
+<!-- list of images -->
+<div class="image-list full-bleed <%= _class %>"  id=" <%= 'img' + _id %>">
+	<% for(var i = 0; i < content.length; i++ ) { %>
+		<img class="temp-image <%= _class %>" src="<%= content[i] %>"  id=" <%= 'image' + _id  + i%>">
+	<% } %>
+</div>
