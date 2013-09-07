@@ -1,0 +1,84 @@
+$line-height: 18px;
+$base-text-size: 14px;
+
+$body-stack: "Adelle", georgia;
+$title-stack: "Myriad Pro", helvetica, tahoma, sans-serif;
+
+$background-color: #111114;
+$foreground-color: #F1F1DC;
+
+$shadow-primary-tier: 5px 5px 5px black;
+$shadow-secondary-tier: 5px 5px 5px black;
+
+$nav-width:  12 * $line-height;
+
+@mixin covered-image  {
+	background-size: cover;
+}
+
+@mixin title-text {
+	font-family: $title-stack;
+	font-weight: 700;
+}
+
+@mixin label-text {
+	font-family: $title-stack;
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+html, body {
+	font-family: "adelle", georgia;
+	font-size: 14px;
+	background-color: $background-color;
+}
+
+.header {
+	@include covered-image;
+	@include title-text;
+
+	$header-text-size: $base-text-size * 5;
+	font-size: $header-text-size;
+	color: white;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+	vertical-align: bottom;
+	padding-top: $line-height * 17 - $header-text-size;
+	padding-bottom: $line-height * 1;
+	padding-left: $line-height * 2;
+
+	box-shadow: $shadow-secondary-tier;
+	margin-bottom: $line-height * 2;
+}
+
+.nav {
+	@include label-text;
+	position: absolute;
+	left: 0;
+	color: white;
+	width: $nav-width;
+
+	.nav-plan {
+		width: 8 * $line-height;
+		margin-left: 1 * $line-height;
+	}
+
+	.nav-plan-thumbnail {
+		width: 100%;
+	}
+
+	.nav-plan-title {
+		text-align: center;
+		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+	}
+}
+
+.plan-container {
+	background-color: $foreground-color;
+	@include calc("width", ( -1.5 *  #{$nav-width} + 100%) );
+	float: right;
+	margin-right: 0.5 * $nav-width;
+}
