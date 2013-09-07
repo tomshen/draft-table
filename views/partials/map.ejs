@@ -1,4 +1,4 @@
 <!-- map -->
-<div class="map <%= _class %>" id=" <%= 'map' + _id %>">
-	<%= content %>  Get the map from these coordinates
+<div class="map <%= _class %>">
+  <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= content.replace(/ /g, '\+') %>&size=640x640&sensor=false&markers=<%= content.replace(/ /g, '\+') %>" />
 </div>

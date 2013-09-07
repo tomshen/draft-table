@@ -3,7 +3,7 @@ path = require 'path'
 http = require 'http'
 _ = require 'underscore'
 
-models = require './models'
+models = require './models' 
 
 models.School.create {name: 'name', email_domain: 'domain', plans: []}, (_id) ->
     models.School.addPlan _id, {title: 'title', image_thumbnail: 'thumb', supporters: [], proposals: [], elements: []}, (plan_id)->

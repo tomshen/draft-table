@@ -4,7 +4,7 @@ mongo = require 'mongoskin', _ = require 'underscore', log = console.log
 db = mongo.db('localhost:27017/test', {w: 0})
 
 pluralize = (word) ->
-  word + 's'
+  word + 's' 
 
 # Replacement for create; callback: (doc_id) ->
 createDocWithParent = (type, parent_id, doc, collectionName, parentCollectionName, callback)->

@@ -18,7 +18,11 @@ uploadModel = (title, modelFile, callback) ->
       r = request.post 'https://api.sketchfab.com/v1/models',
         { headers: {'content-length': length} },
         (err, response, body) ->
-          callback(err) if err
+          fileName = body.result.id +'.dae'
+          newPath = __dirname + '/public/models/' + filename
+          fs.writeFile newPath, data, (err) ->
+            callback err
+          callback err if err
           try
             body = JSON.parse(body)
           catch e
