@@ -90,6 +90,10 @@ Plan.create = function(school_id, plan, callback) {
   });
 };
 
+Plan.get = function(plan_id, callback) {
+  return db.collection('plans').findById(plan_id, callback);
+};
+
 Element = {};
 
 Supporter = {};
