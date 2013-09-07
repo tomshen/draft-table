@@ -2,3 +2,15 @@
 <div class="map <%= _class %>">
   <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= content.replace(/ /g, '\+') %>&size=640x640&sensor=false&markers=<%= content.replace(/ /g, '\+') %>" />
 </div>
+
+<div class="map <%= _class %>" id="map-<%= content[0] %>-<%= content[0] %>" style="width: 400px; height: 300px"></div>
+
+<script type="text/javascript">
+  var myOptions = {
+     zoom: 8,
+     center: new google.maps.LatLng(<%= content[0] %>,<%= content[1] %>),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("map-<%= content[0] %>-<%= content[0] %>"), myOptions);
+</script>
