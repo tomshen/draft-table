@@ -1,7 +1,21 @@
 window.addTextInput = () ->
   container = $('<div>').attr('class', 'text-input-container')
-  node = $('<textarea>').attr('name', _.uniqueId('elt-text-'))
+  node = $('<textarea>').attr('name', _.uniqueId("elt-text-"))
     .attr('class', 'text-input')
+  container.append node
+  $('#proposal-elements').append container
+
+window.addSubheaderInput = () ->
+  container = $('<div>').attr('class', 'subheader-input-container')
+  node = $('<input>').attr('type', 'text').attr('name', _.uniqueId("elt-text-subheader-"))
+    .attr('class', 'subheader-input')
+  container.append node
+  $('#proposal-elements').append container
+
+window.addProminentInput = () ->
+  container = $('<div>').attr('class', 'prominent-input-container')
+  node = $('<input>').attr('type', 'text').attr('name', _.uniqueId("elt-text-prominent-"))
+    .attr('class', 'prominent-input')
   container.append node
   $('#proposal-elements').append container
 
