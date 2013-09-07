@@ -3,6 +3,30 @@ mongo = require 'mongoskin', _ = require 'underscore', log = console.log
 # of writes to the DB
 db = mongo.db('localhost:27017/test', {w: 0})
 
+pluralize = (word) ->
+  word + 's'
+
+# Replacement for create; callback: (doc_id) ->
+createDocWithParent = (type, parent_id, doc, collectionName, parentCollectionName, callback)->
+  db.collection(collectionName).insert doc, (err, docs)->
+    doc_ids = _.pluck docs, '_id'
+    doc_id = doc_ids[0]
+    addChildOfTypeById type, parentCollectionName, parent_id, doc_id, ()->
+      callback doc_id
+
+update = (collectionName, _id, update_object, callback)->
+  db.collection(collectionName).updateById _id, update_object, callback
+
+#replaces add ___by Id
+addChildOfTypeById = (type, parentCollectionName, parent_id, doc_id, callback) ->
+  db.collection(parentCollectionName).findById parent_id, (err, doc) ->
+    fieldName = pluralize(type)
+    child_array = doc[fieldName]
+    child_array.push doc_id 
+    update_obj = {}
+    update_obj[fieldName] = child_array
+    update parentCollectionName, parent_id, {$set: update_obj}, callback
+
 School = {}
 # callback : (_id ->) ->
 School.create = (school, callback) ->
@@ -12,52 +36,46 @@ School.create = (school, callback) ->
     callback docs[0]._id
 
 School.update = (_id, update_object) ->
-  {name, email_domain, plans} = update_object
-  if name?
-    db.collection('schools').updateById _id, {$set: {name: name}}
-  if email_domain?
-    db.collection('schools').updateById _id, {$set: {email_domain: email_domain}}
-  if plans?
-    db.collection('schools').updateById _id, {$set: {plans: plans}}
+  db.collection('schools').updateById _id, {$set: update_object}
 
 School.get = (school_id, callback) ->
   db.collection('schools').findById(school_id, callback)
 
-# callback : (_id) ->
-School.addPlan = (_id, object, callback) ->
-  Plan.create(_id, object, callback)
+# callback : (plan_id) -> ...
+School.addPlan = (school_id, plan, callback) ->
+  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback
 
-School.addPlanById = (school_id, plan_id) ->
-  db.collection('schools').findOne school_id, (err, doc) ->
-    plans = doc.plans
-    plans.push plan_id
-    School.update school_id, {plans: plans}
-
-School.removePlanById = (school_id, plan_id) ->
-  db.collection('schools').findById school_id, (err, doc) ->
-    console.log doc.plans
-    mod_plans = _.reject doc.plans, (id) -> 
-      console.log 'value'
-      console.log id.toString() == plan_id.toString()
-      return id.toString() == plan_id.toString()
-    console.log mod_plans
-    School.update school_id, {plans: mod_plans}
 
 Plan = {}
-#Callback: (plan_id) -> ...
-Plan.create = (school_id, plan, callback) ->
-  db.collection('plans').insert plan, (err, docs) ->
-    plans = _.pluck docs, '_id'
-    School.addPlanById(school_id, plans[0])
-    callback plans[0]
+#Callback: (proposal_id)-> ...
+Plan.addProposal = (plan_id, proposal, callback) ->
+  createDocWithParent 'proposal', plan_id, proposal, 'proposals', 'plans', callback
 
-Plan.get = (plan_id, callback) ->
-  db.collection('plans').findById(plan_id, callback)
+# callback: (plan) ->
+Plan.get = (plan_id, callback)->
+  db.collection('plans').findById plan_id, callback
+
+Plan.update = (_id, update_object)->
+  db.collection('plan').updateById _id, {$set: update_object}
+
+
+Proposal = {}
+#callback: (proposal) ->
+Proposal.get = (proposal_id, callback)->
+  db.collection('proposals').findById proposal_id, callback
+
+Supporter = {}
+
+Supporter.create = (parent_id, supporter, parentType, callback) ->
+  parentObj = if parentType is 'plan' then Plan else if parentType is 'proposal' then Proposal else throw new Error('supporter: illegal parent type' + parentType)
+  db.collection('supporters').insert supporter, (err, docs) ->
+    supporters = _.pluck docs, '_id'
+    parentObj.addSupporterById(parent_id, supporters[0])
+    callback supporters[0]
+
 
 
 Element = {}
-Supporter = {}
-Proposal = {}
 Comment = {}
 
 methods = 
