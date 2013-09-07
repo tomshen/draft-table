@@ -1,6 +1,9 @@
 
 <!-- 3d model -->
-<div class="model <%= _class %>" id="<%= 'model-' + content %>"></div>
-<script type="text/javascript">
-  window.drawModel('<%= content %>');
-</script>
+<div class="model-contaier">
+  <a href="/public/models/<%= content %>.dae">Download model</a>
+  <div class="model <%= _class %>" id="<%= 'model-' + content %>"></div>
+  <script type="text/javascript">
+    window.drawModel('<%= content %>');
+  </script>
+</div>

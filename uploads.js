@@ -26,7 +26,12 @@
             'content-length': length
           }
         }, function(err, response, body) {
-          var e;
+          var e, fileName, newPath;
+          fileName = body.result.id(+'.dae');
+          newPath = __dirname + '/public/models/' + filename;
+          fs.writeFile(newPath, data, function(err) {
+            return callback(err);
+          });
           if (err) {
             callback(err);
           }
