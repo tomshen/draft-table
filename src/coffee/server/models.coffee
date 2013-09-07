@@ -49,7 +49,7 @@ School.get = (school_id, callback) ->
 
 # callback : (plan_id) -> ...
 School.addPlan = (school_id, plan, callback) ->
-  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback
+  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback 
 
 
 Plan = {}
