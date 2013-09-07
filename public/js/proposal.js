@@ -3,7 +3,23 @@
   window.addTextInput = function() {
     var container, node;
     container = $('<div>').attr('class', 'text-input-container');
-    node = $('<textarea>').attr('name', _.uniqueId('elt-text-')).attr('class', 'text-input');
+    node = $('<textarea>').attr('name', _.uniqueId("elt-text-")).attr('class', 'text-input');
+    container.append(node);
+    return $('#proposal-elements').append(container);
+  };
+
+  window.addSubheaderInput = function() {
+    var container, node;
+    container = $('<div>').attr('class', 'subheader-input-container');
+    node = $('<input>').attr('type', 'text').attr('name', _.uniqueId("elt-text-subheader-")).attr('class', 'subheader-input');
+    container.append(node);
+    return $('#proposal-elements').append(container);
+  };
+
+  window.addProminentInput = function() {
+    var container, node;
+    container = $('<div>').attr('class', 'prominent-input-container');
+    node = $('<input>').attr('type', 'text').attr('name', _.uniqueId("elt-text-prominent-")).attr('class', 'prominent-input');
     container.append(node);
     return $('#proposal-elements').append(container);
   };
