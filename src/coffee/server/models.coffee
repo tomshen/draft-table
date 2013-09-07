@@ -1,4 +1,4 @@
-mongo = require 'mongoskin', _ = require 'underscore', log = console.log
+mongo = require 'mongoskin', _ = require 'underscore', moment = require 'moment', log = console.log
 # w:0 gets rid of the default write concern message, but may be unsafe for production since it doesn't force acknowledgement
 # of writes to the DB
 db = mongo.db('localhost:27017/test', {w: 0})
@@ -48,13 +48,15 @@ School.get = (school_id, callback) ->
   db.collection('schools').findById(school_id, callback)
 
 # callback : (plan_id) -> ...
-School.addPlan = (school_id, plan, callback) ->
+School.addPlan = (school_id, plan, files, callback) ->
+  #stub - change the plan object
   createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback 
 
 
 Plan = {}
 #Callback: (proposal_id)-> ...
-Plan.addProposal = (plan_id, proposal, callback) ->
+Plan.addProposal = (plan_id, proposal, files, callback) ->
+  proposal.timestamp = moment().valueOf()
   createDocWithParent 'proposal', plan_id, proposal, 'proposals', 'plans', callback
 
 # callback: (plan) ->
@@ -83,9 +85,8 @@ Proposal.addElement = (proposal_id, element) ->
   updateByPush proposal_id, element, 'elements', 'proposals'
 
 Proposal.addComment = (proposal_id, comment) ->
+  comment.timestamp = moment().valueOf()
   updateByPush proposal_id, comment, 'comments', 'proposals'
-  #stub
-
 
 
 methods = 
