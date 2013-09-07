@@ -51,6 +51,10 @@ Plan.create = (school_id, plan, callback) ->
     School.addPlanById(school_id, plans[0])
     callback plans[0]
 
+Plan.get = (plan_id, callback) ->
+  db.collection('plans').findById(plan_id, callback)
+
+
 Element = {}
 Supporter = {}
 Proposal = {}
