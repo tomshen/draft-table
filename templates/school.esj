@@ -1,0 +1,27 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>Change Me Maybe!!!!!!</title>
+</head>
+<body>	
+	<div class="school-container">
+		<div class="header">
+			<img class="header-cover-image" src="<%= cover_image %>">
+			<%= name %>
+		</div>
+
+		<div class="nav">
+			<% for(var i = 0; i < plan.length; i++) { %>
+				<div class="nav-proposal">
+					<img class="nav-proposal-thumbnail" src="<%= plan[i].image_thumbnail %>">
+					<div class="nav-proposal-title"> <%= plan[i].title %> </div>
+				</div>
+			<% } %>
+		</div>
+
+		<div class="proposal-container">
+			<!-- insert proposal here -->
+		</div>
+	</div>
+</body>
+</html>
