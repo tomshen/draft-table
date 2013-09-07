@@ -2,23 +2,147 @@
 <html>
 <head>
 	<title>Change Me Maybe!!!!!!</title>
+
+	<!-- typkit embed code -->
+
+	
+
+	<!-- end typkit code -->
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>	
 	<div class="school-container">
-		<div class="header">
-			<!-- removed penn cover image -->
+		<div class="header"  style="background-image:url('img/penn_cover_big.jpg')">
 			University of Pennsylvania
 		</div>
 
 		<div class="nav">
 			<div class="nav-plan">
-				<img class="nav-plan-thumbnail" src="<%= plan[i].image_thumbnail %>">
-				<div class="nav-plan-title"> <%= plan[i].title %> </div>
+				<img class="nav-plan-thumbnail" src="img/singh/thumbnail.jpg">
+				<div class="nav-plan-title"> Singh Center for Nanotechnology </div>
+			</div>
+			<div class="nav-plan">
+				<img class="nav-plan-thumbnail" src="img/hub/thumbnail.jpg">
+				<div class="nav-plan-title"> Hub 3939 </div>
+			</div>
+			<div class="nav-plan">
+				<img class="nav-plan-thumbnail" src="img/cira/thumbnail.jpg">
+				<div class="nav-plan-title"> Cira Centre South </div>
 			</div>
 		</div>
 
-		<div class="proposal-container">
-			<!-- insert proposal here -->
+		<div class="plan-container">
+
+			<div class="plan-title"> Singh Center for Nanotechnology </div>
+			<div class="interaction-buttons-container">
+				<!-- TODO: make this button link to the proposals at the bottom of the page -->
+				<div class="button proposals-button"> 2 proposals</div>
+				<!-- TODO: make this button display a list of supporters on hover -->
+				<!-- TODO: make this button send a post to /plan/{plan}/support on click-->
+				<div class="button supporters-button"> 5 supporters</div>
+			</div>
+
+			<div class="plan-content-container">
+				<!-- prominent text -->
+				<p class="body-text prominent">Etiam dictum est nec ultricies pretium. Quisque venenatis dolor ut nibh condimentum iaculis. Aenean eu purus est. Sed imperdiet sem orci, a porta est ultricies id.</p>
+				<!-- body text -->
+				<p class="body-text">Aliquam nulla dui, tempor id tortor quis, scelerisque facilisis risus. Quisque commodo cursus viverra. Fusce et bibendum libero. Ut ac justo fermentum, pellentesque nisl sed, aliquet dolor. Etiam elementum diam vitae mi tempus, tempor dapibus dolor accumsan. Suspendisse rhoncus quis nisl vel tempor. In luctus mauris ipsum, vel aliquam augue convallis vitae. Donec venenatis velit sed velit pretium euismod. Morbi malesuada congue convallis. Quisque posuere et nunc vitae rhoncus.</p>
+				<!-- full image -->
+				<div class="image full-bleed" style="background-image:url('img/penn_students_02.jpg')">
+					<!-- need to add an image -->
+				</div>					
+				<!-- body text -->
+				<p class="body-text subhead">Sed Iaculis Erat Vel</p>
+				<!-- body text -->
+				<p class="body-text">Fusce in nibh vitae augue iaculis aliquet. Proin eu lacinia quam. Duis semper nulla quis urna mollis eleifend. Morbi rhoncus, mauris sit amet tempor dapibus, purus purus dapibus ipsum, non mattis elit magna nec nisl. Suspendisse pretium dolor magna, dictum aliquam lectus malesuada sit amet. Ut vehicula dapibus posuere. Sed ut erat et sapien vestibulum volutpat eu sit amet tortor. Nullam nisl erat, consectetur sed elit dictum, tristique tincidunt turpis. Vestibulum lacinia posuere velit, vitae aliquam est accumsan porta. Nam in sapien dignissim, commodo mauris non, lacinia libero. Maecenas bibendum erat diam, sed interdum felis viverra eu. Nam id felis dolor. Donec quis ante vel sapien fermentum ultricies eu dignissim erat. Phasellus ac libero viverra tortor venenatis cursus. Proin viverra mi at urna tincidunt, ac imperdiet nisl fermentum. Morbi consectetur laoreet lacus id interdum.</p>
+				<!-- full image -->
+				<div class="image full-bleed" style="background-image:url('img/penn_old.jpg')">
+					<!-- need to add an image -->
+				</div>					
+				<!-- body text -->
+				<p class="body-text subhead">Cras Pulvinar Euismod Ipsum</p>
+				<!-- body text -->
+				<p class="body-text">Quispue sodales mi egestas purus varius gravida. Duis viverra libero vehicula ipsum iaculis, quis suscipit magna ultrices. Sed vel rhoncus ligula. Aliquam a justo ornare, malesuada tortor et, venenatis purus. Suspendisse potenti. Sed a bibendum massa, et consectetur magna. Etiam vitae sem aliquam, eleifend orci nec, semper ligula. Phasellus eu leo pharetra enim dictum cursus et sit amet risus. Pellentesque hendrerit placerat eros accumsan rhoncus.</p>
+			</div>
+
+			<div class="proposals-container">
+				<div class="proposal active" id="<%= 'proposal' + id %>">
+					<div class="proposal-toggle"></div>
+					<div class="proposal-title">Lorem Ipsum Dolor</div>
+					<div class="proposal-supporters"> 5 supporters </div>
+					<div class="proposal-author"> dcabot </div>
+
+					<div class="proposal-content"> 							
+							<!-- prominent text -->
+						<p class="body-text">Cras pretium, quam nec tincidunt pellentesque, nisi sem tincidunt sapien, eget venenatis velit nulla sit amet ipsum. Integer ullamcorper massa sit amet risus ultricies congue. Maecenas tincidunt urna eu sollicitudin placerat. Praesent accumsan diam pharetra nisi elementum, a eleifend orci lacinia.</p>
+						<!-- full image -->
+						<div class="image full-bleed" style="background-image:url('img/penn_overlook.jpg')">
+							<!-- need to add an image -->
+						</div>					
+						<!-- body text -->
+						<p class="body-text subhead">Donec Magna Nibh</p>
+						<!-- body text -->
+						<p class="body-text">Mauris in ligula sed sapien placerat sollicitudin ut vitae ligula. Donec sit amet erat id mi feugiat adipiscing non et enim. Fusce condimentum, risus vel consequat faucibus, odio dui pretium neque, in venenatis mauris libero non est. Vivamus sem quam, condimentum eu augue at, rhoncus viverra tellus. Suspendisse at massa malesuada, tempus augue a, lobortis risus. Vivamus imperdiet varius cursus. Nunc sed facilisis risus, id pretium orci. Etiam faucibus luctus urna, eu facilisis ante semper at. Fusce tincidunt magna et eros semper convallis. Quisque posuere mauris at felis convallis suscipit.</p>
+					</div>
+
+					<div class="proposal-comments ">							
+						<div class="proposal-comment school">
+							<div class="comment-attribution">
+								<span class="comment-author"> qtarantino </span>
+								<span class="comment-date"> 9/6/13 </span>
+							</div>
+							<div class="comment-content">Suspendisse imperdiet metus eu faucibus auctor. Pellentesque sed ullamcorper dolor, at varius libero. Nullam vitae risus nulla. Aenean at facilisis nisi. Quisque id sem id tellus euismod tristique at eget purus. Etiam eu nisi sit amet nulla condimentum egestas. Cras ut dui dictum, tempor lectus in, suscipit ligula.</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="proposal " id="<%= 'proposal' + id %>">
+					<div class="proposal-toggle"></div>
+					<div class="proposal-title"> Nostrum Exercitationem Ullam </div>
+					<div class="proposal-supporters"> 1 supporter </div>
+					<div class="proposal-author"> rnorth </div>
+
+					<div class="proposal-content"> 
+						<!-- prominent text -->
+						<p class="body-text">Etiam dictum est nec ultricies pretium. Quisque venenatis dolor ut nibh condimentum iaculis. Aenean eu purus est. Sed imperdiet sem orci, a porta est ultricies id.</p>
+						<!-- full image -->
+						<div class="image full-bleed" style="background-image:url('img/penn_building_01.jpg')">
+							<!-- need to add an image -->
+						</div>					
+						<!-- body text -->
+						<p class="body-text subhead">Cras Pulvinar Euismod Ipsum</p>
+						<!-- body text -->
+						<p class="body-text">Quispue sodales mi egestas purus varius gravida. Duis viverra libero vehicula ipsum iaculis, quis suscipit magna ultrices. Sed vel rhoncus ligula. Aliquam a justo ornare, malesuada tortor et, venenatis purus. Suspendisse potenti. Sed a bibendum massa, et consectetur magna. Etiam vitae sem aliquam, eleifend orci nec, semper ligula. Phasellus eu leo pharetra enim dictum cursus et sit amet risus. Pellentesque hendrerit placerat eros accumsan rhoncus.</p>
+					</div>
+
+					<div class="proposal-comments ">
+						<div class="proposal-comment">
+							<div class="comment-attribution">
+								<span class="comment-author"> landrews </span>
+								<span class="comment-date"> 9/5/13 </span>
+							</div>
+							<div class="comment-content"> Praesent mattis erat nec leo adipiscing, et iaculis nisl varius. Aliquam eu lorem eros. Quisque at purus id nibh cursus varius faucibus sit amet nibh. Sed pulvinar tincidunt dolor, ut elementum lorem mattis non. Fusce rutrum erat nec mauris suscipit bibendum. Quisque est mauris, cursus sed elementum quis, sagittis sed risus. Mauris pretium nisi non leo dapibus luctus. Phasellus consequat aliquet eros, non porttitor sapien malesuada eu. Sed risus tellus, volutpat sed turpis sed, laoreet interdum enim. Mauris nec elit quis massa pharetra pretium sit amet sit amet sapien. Etiam eget magna nisl. Aliquam et risus consequat, pellentesque nisl nec, tincidunt libero. Curabitur adipiscing orci nunc, id eleifend arcu condimentum id. </div>
+						</div>
+
+
+						<div class="proposal-comment school">
+							<div class="comment-attribution">
+								<span class="comment-author"> pchase </span>
+								<span class="comment-date"> 9/2/13 </span>
+							</div>
+							<div class="comment-content">Duis tincidunt, lacus vitae hendrerit eleifend, velit urna molestie nulla, sed egestas lectus ante non nisl. Nunc enim augue, pharetra dignissim quam facilisis, adipiscing ullamcorper est. Nulla sed erat at justo gravida facilisis quis ut dolor. In ornare libero et sem volutpat tincidunt. Curabitur dignissim justo non nunc pulvinar, in tristique ante cursus. Integer et lectus erat. Phasellus vitae tempor erat. Vivamus at neque ullamcorper, elementum mauris ut, fermentum magna. Phasellus eget mi risus. Vestibulum mollis commodo ipsum consequat tristique. Ut ut est eget leo placerat vestibulum. Phasellus euismod nunc a consequat porta.</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<a class="button new-proposal-button" href="/proposal/new">Make a new proposal</a>
+
+			</div>
+
 		</div>
 	</div>
 </body>

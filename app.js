@@ -37,6 +37,8 @@ models.School.create({
 
 app = express();
 
+app.engine('ejs', require('ejs-locals'));
+
 app.set('view engine', 'ejs');
 
 app.set('views', __dirname + '/views');
@@ -74,7 +76,7 @@ app.get('/:school/:plan/proposal', function(req, res) {
 });
 
 app.post('/school/:school/plan/new', function(req, res) {
-  return models.School.addPlan(req.params.school, req.body, function(id) {
+  return models.School.addPlan(req.params.school, req.body, req.files, function(id) {
     return res.send(id);
   });
 });
@@ -84,7 +86,7 @@ app.post('/plan/:plan/support', function(req, res) {
 });
 
 app.post('/plan/:plan/proposal/new', function(req, res) {
-  return models.Plan.addProposal(req.params.plan, req.body, function(id) {
+  return models.Plan.addProposal(req.params.plan, req.body, req.files, function(id) {
     return res.send(id);
   });
 });

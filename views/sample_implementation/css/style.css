@@ -1,0 +1,41 @@
+html, body {
+  font-family: "adelle", georgia;
+  font-size: 14px;
+  background-color: #111114; }
+
+.header {
+  background-size: cover;
+  font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  color: white;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+  vertical-align: bottom;
+  padding-top: 236px;
+  padding-bottom: 18px;
+  padding-left: 36px;
+  box-shadow: 5px 5px 5px black;
+  margin-bottom: 36px; }
+
+.nav {
+  font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
+  position: absolute;
+  left: 0;
+  color: white;
+  width: 216px; }
+  .nav .nav-plan {
+    width: 144px;
+    margin-left: 18px; }
+  .nav .nav-plan-thumbnail {
+    width: 100%; }
+  .nav .nav-plan-title {
+    text-align: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7); }
+
+.plan-container {
+  background-color: #f1f1dc;
+  width: -moz-calc(-1.5 * 216px + 100%);
+  width: -webkit-calc(-1.5 * 216px + 100%);
+  width: calc(-1.5 * 216px + 100%);
+  float: right;
+  margin-right: 108px; }
