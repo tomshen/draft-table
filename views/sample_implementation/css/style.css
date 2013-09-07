@@ -7,35 +7,70 @@ html, body {
   background-size: cover;
   font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
   font-weight: 700;
-  font-size: 70px;
+  letter-spacing: -0.04em;
+  font-size: 72px;
   color: white;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7);
   vertical-align: bottom;
-  padding-top: 236px;
-  padding-bottom: 18px;
-  padding-left: 36px;
-  box-shadow: 5px 5px 5px black;
-  margin-bottom: 36px; }
+  padding-top: -moz-calc(-1 * 72px + 25%);
+  padding-top: -webkit-calc(-1 * 72px + 25%);
+  padding-top: calc(-1 * 72px + 25%);
+  padding-bottom: 22px;
+  padding-left: 44px;
+  box-shadow: 0px 2px 5px black;
+  margin-bottom: 44px; }
 
 .nav {
   font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
   position: absolute;
   left: 0;
   color: white;
-  width: 216px; }
+  width: 308px; }
   .nav .nav-plan {
-    width: 144px;
-    margin-left: 18px; }
+    width: 176px;
+    margin-left: 22px; }
   .nav .nav-plan-thumbnail {
-    width: 100%; }
+    width: 100%;
+    box-shadow: 0px 2px 5px black; }
   .nav .nav-plan-title {
     text-align: center;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7); }
+    text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7); }
 
 .plan-container {
+  box-shadow: 0px 2px 5px black;
+  padding: 22px 0;
   background-color: #f1f1dc;
-  width: -moz-calc(-1.5 * 216px + 100%);
-  width: -webkit-calc(-1.5 * 216px + 100%);
-  width: calc(-1.5 * 216px + 100%);
+  width: -moz-calc(-1 * 308px + 100%);
+  width: -webkit-calc(-1 * 308px + 100%);
+  width: calc(-1 * 308px + 100%);
   float: right;
-  margin-right: 108px; }
+  margin-right: 77px; }
+  .plan-container .plan-title {
+    font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    padding: 22px 0;
+    margin: 0 44px;
+    font-size: 54px;
+    padding-top: 8px;
+    padding-bottom: 4px; }
+  .plan-container .body-text {
+    max-width: 660px;
+    padding: 22px 0;
+    margin: 0 44px;
+    font-size: 18px;
+    line-height: 22px; }
+  .plan-container .subhead {
+    font-family: "Myriad Pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 22px; }
+  .plan-container .prominent {
+    max-width: 990px;
+    font-size: 27px;
+    line-height: 33px;
+    font-style: italic; }
+  .plan-container .image.full-bleed {
+    width: 100%;
+    min-height: 440px;
+    background-size: cover;
+    background-position: center; }
