@@ -6,17 +6,15 @@
 <body>	
 	<div class="school-container">
 		<div class="header">
-			<img class="header-cover-image" src="<%= cover_image %>">
-			<%= name %>
+			<!-- removed penn cover image -->
+			University of Pennsylvania
 		</div>
 
 		<div class="nav">
-			<% for(var i = 0; i < plan.length; i++) { %>
-				<div class="nav-proposal">
-					<img class="nav-proposal-thumbnail" src="<%= plan[i].image_thumbnail %>">
-					<div class="nav-proposal-title"> <%= plan[i].title %> </div>
-				</div>
-			<% } %>
+			<div class="nav-plan">
+				<img class="nav-plan-thumbnail" src="<%= plan[i].image_thumbnail %>">
+				<div class="nav-plan-title"> <%= plan[i].title %> </div>
+			</div>
 		</div>
 
 		<div class="proposal-container">
