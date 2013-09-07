@@ -1,9 +1,9 @@
-express = require('express')
-path = require('path')
-http = require('http')
-_ = require('underscore')
+express = require 'express'
+path = require 'path'
+http = require 'http'
+_ = require 'underscore'
 
-models = require('./models')
+models = require './models'
 
 app = express()
 
