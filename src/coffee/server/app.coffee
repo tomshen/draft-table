@@ -1,6 +1,10 @@
 express = require('express')
 path = require('path')
 http = require('http')
+_ = require('underscore')
+
+models = require('./models')
+
 app = express()
 
 app.set 'view engine', 'ejs'
@@ -10,8 +14,41 @@ app.configure () ->
   app.set 'port', process.env.PORT || 3000
   app.use '/public', express.static(path.join(__dirname, 'public'))
 
+# User-facing views
 app.get '/', (req, res) ->
   res.render 'index'
+
+app.get '/:school', (req, res) ->
+  models.School.get req.params.school, (err, school) ->
+    res.render 'school', school
+
+app.get '/:school/:plan', (req, res) ->
+  models.School.get req.params.school, (err, school) ->
+    res.render 'plan', _.filter school.plans, (plan) ->
+      plan._id is req.params.plan
+
+app.get '/:school/:plan/proposal', (req, res) ->
+  models.School.get req.params.school, (err, school) ->
+    res.render 'new_proposal', {
+      school: school,
+      plan: _.filter school.plans, (plan) -> plan._id is req.params.plan
+    }
+
+# Views for POSTing
+app.post '/school/:school/plan/new', (req, res) ->
+  models.School.addPlan req.params.school, req.body, (id) -> res.send id
+
+app.post '/plan/:plan/support', (req, res) ->
+  models.Plan.addSupporter req.params.plan, req.body
+
+app.post '/plan/:plan/proposal/new', (req, res) ->
+  models.Plan.addProposal req.params.plan, req.body, (id) -> res.send id
+
+app.post '/proposal/:proposal/support', (req, res) ->
+  models.Proposal.addSupporter req.params.proposal, req.body
+
+app.post '/proposal/:proposal/comment', (req, res) ->
+  models.Proposal.addComment req.params.proposal, req.body
 
 http.createServer(app).listen app.get 'port'
 console.log 'Express server listening on port ' + app.get 'port'

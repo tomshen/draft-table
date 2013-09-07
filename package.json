@@ -10,7 +10,8 @@
     "express": "~3.3.8",
     "node-sass": "~0.6.4",
     "coffee-script": "~1.6.3",
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "underscore": "~1.5.1"
   },
   "engine": "0.10.x"
 }
