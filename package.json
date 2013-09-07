@@ -1,0 +1,15 @@
+{
+  "name": "changememaybe",
+  "description": "A site to allow students to give feedback for and propose changes to campus building plans",
+  "author": "Tom Shen <tom@tomshen.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomshen/changememaybe"
+  },
+  "dependencies": {
+    "express": "~3.3.8",
+    "hamljs": "~0.6.1",
+    "node-sass": "~0.6.4"
+  },
+  "engine": "0.10.x"
+}
