@@ -1,0 +1,7 @@
+<div class="proposal-comment  <%= class %>" id="<%= 'comment' + id%>" >
+	<div class="comment-attribution">
+		<span class="comment-author"> <%= author %> </span>
+		<span class="comment-date"> <%= date %> </span>
+	</div>
+	<div class="comment-content"> <%= content %> </div>
+</div>

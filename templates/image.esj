@@ -1,0 +1,4 @@
+<!-- full image -->
+<div class="image full-bleed <%= class %>" src="<%= content %>"  id=" <%= 'image' + id %>"> 
+	<img class="temp-image" src="<%= content %>">
+</div>
