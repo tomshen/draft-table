@@ -1,17 +1,19 @@
 <!-- map -->
-<div class="map <%= _class %>" id="map-<%= content[0] %>-<%= content[0] %>" style="width: 640px; height: 640px"></div>
+<div class="map-container">
+  <div class="map <%= _class %>" id="map-<%= content[0] %>-<%= content[0] %>"></div>
 
-<script type="text/javascript">
-  var pos = new google.maps.LatLng(<%= content[0] %>,<%= content[1] %>);
+  <script type="text/javascript">
+    var pos = new google.maps.LatLng(<%= content[0] %>,<%= content[1] %>);
 
-  var map = new google.maps.Map(document.getElementById("map-<%= content[0] %>-<%= content[0] %>"), {
-    zoom: 16,
-    center: pos,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-  });
+    var map = new google.maps.Map(document.getElementById("map-<%= content[0] %>-<%= content[0] %>"), {
+      zoom: 16,
+      center: pos,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
 
-  var marker = new google.maps.Marker({
-    map: map,
-    position: pos
-  })
-</script>
+    var marker = new google.maps.Marker({
+      map: map,
+      position: pos
+    })
+  </script>
+</div>
