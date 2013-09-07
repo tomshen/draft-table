@@ -34,20 +34,18 @@
   });
 
   app.get('/:school/:plan', function(req, res) {
-    return models.School.get(req.params.school, function(err, school) {
-      return res.render('plan', _.filter(school.plans, function(plan) {
-        return plan._id === req.params.plan;
-      }));
+    return models.Plan.get(req.params.plan, function(err, plan) {
+      return res.render('plan', plan);
     });
   });
 
   app.get('/:school/:plan/proposal', function(req, res) {
     return models.School.get(req.params.school, function(err, school) {
-      return res.render('new_proposal', {
-        school: school,
-        plan: _.filter(school.plans, function(plan) {
-          return plan._id === req.params.plan;
-        })
+      return models.Plan.get(req.params.plan, function(err, plan) {
+        return res.render('new_proposal', {
+          school: school,
+          plan: plan
+        });
       });
     });
   });

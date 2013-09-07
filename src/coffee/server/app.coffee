@@ -23,16 +23,13 @@ app.get '/:school', (req, res) ->
     res.render 'school', school
 
 app.get '/:school/:plan', (req, res) ->
-  models.School.get req.params.school, (err, school) ->
-    res.render 'plan', _.filter school.plans, (plan) ->
-      plan._id is req.params.plan
+  models.Plan.get req.params.plan, (err, plan) ->
+    res.render 'plan', plan
 
 app.get '/:school/:plan/proposal', (req, res) ->
   models.School.get req.params.school, (err, school) ->
-    res.render 'new_proposal', {
-      school: school,
-      plan: _.filter school.plans, (plan) -> plan._id is req.params.plan
-    }
+    models.Plan.get req.params.plan, (err, plan) ->
+      res.render 'new_proposal', { school: school, plan: plan }
 
 # Views for POSTing
 app.post '/school/:school/plan/new', (req, res) ->
