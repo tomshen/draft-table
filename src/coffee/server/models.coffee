@@ -77,22 +77,16 @@ Proposal.get = (proposal_id, callback)->
   db.collection('proposals').findById proposal_id, callback
 
 Proposal.addSupporter = (proposal_id, supporter) ->
-  #stub
+  updateByPush proposal_id, supporter, 'supporters', 'proposals'
 
 Proposal.addElement = (proposal_id, element) ->
-  #stub
+  updateByPush proposal_id, element, 'elements', 'proposals'
 
 Proposal.addComment = (proposal_id, comment) ->
+  updateByPush proposal_id, comment, 'comments', 'proposals'
   #stub
 
-Supporter = {}
 
-Supporter.create = (parent_id, supporter, parentType, callback) ->
-  parentObj = if parentType is 'plan' then Plan else if parentType is 'proposal' then Proposal else throw new Error('supporter: illegal parent type' + parentType)
-  db.collection('supporters').insert supporter, (err, docs) ->
-    supporters = _.pluck docs, '_id'
-    parentObj.addSupporterById(parent_id, supporters[0])
-    callback supporters[0]
 
 methods = 
   School: School
