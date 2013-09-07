@@ -1,10 +1,12 @@
+<% layout('layout') -%>
+
 <div class="proposal <% if(active) print('active') %> " id="<%= 'proposal' + id %>">
 	<div class="proposal-toggle"></div>
 	<div class="proposal-title"><%= title %></div>
 	<div class="proposal-supporters"><%= supporters.length %> supporter </div>
 	<div class="proposal-author"><%= author %></div>
 
-	<div class="proposal-content"> 
+	<div class="proposal-content">
 		<!-- add proposal content -->
 	</div>
 
