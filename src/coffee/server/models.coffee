@@ -4,7 +4,7 @@ mongo = require 'mongoskin', _ = require 'underscore', log = console.log
 db = mongo.db('localhost:27017/test', {w: 0})
 
 pluralize = (word) ->
-  word + 's'
+  word + 's' 
 
 # Replacement for create; callback: (doc_id) ->
 createDocWithParent = (type, parent_id, doc, collectionName, parentCollectionName, callback)->
@@ -26,6 +26,12 @@ addChildOfTypeById = (type, parentCollectionName, parent_id, doc_id, callback) -
     update_obj = {}
     update_obj[fieldName] = child_array
     update parentCollectionName, parent_id, {$set: update_obj}, callback
+
+updateByPush = (_id, listElt, listName, collectionName)->
+  push_me = {}
+  push_me[listName] = listElt
+  update_object = { $push: push_me}
+  db.collection(collectionName).updateById _id, update_object
 
 School = {}
 # callback : (_id ->) ->
@@ -56,13 +62,28 @@ Plan.get = (plan_id, callback)->
   db.collection('plans').findById plan_id, callback
 
 Plan.update = (_id, update_object)->
-  db.collection('plan').updateById _id, {$set: update_object}
+  db.collection('plans').updateById _id, {$set: update_object}
+
+Plan.addSupporter = (plan_id, supporter)->
+  updateByPush plan_id, supporter, 'supporters', 'plans'
+
+Plan.addElement = (plan_id, element)->
+  updateByPush plan_id, element, 'elements', 'plans'
 
 
 Proposal = {}
 #callback: (proposal) ->
 Proposal.get = (proposal_id, callback)->
   db.collection('proposals').findById proposal_id, callback
+
+Proposal.addSupporter = (proposal_id, supporter) ->
+  #stub
+
+Proposal.addElement = (proposal_id, element) ->
+  #stub
+
+Proposal.addComment = (proposal_id, comment) ->
+  #stub
 
 Supporter = {}
 
@@ -73,18 +94,11 @@ Supporter.create = (parent_id, supporter, parentType, callback) ->
     parentObj.addSupporterById(parent_id, supporters[0])
     callback supporters[0]
 
-
-
-Element = {}
-Comment = {}
-
 methods = 
   School: School
   Plan: Plan
-  Element: Element
-  Supporter: Supporter
   Proposal: Proposal
-  Comment: Comment
+
 
 
 

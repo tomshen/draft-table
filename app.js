@@ -22,12 +22,16 @@
       image_thumbnail: 'thumb',
       supporters: [],
       proposals: [],
-      element: []
+      elements: []
     }, function(plan_id) {
-      return models.Plan.addProposal(plan_id, {
+      models.Plan.addProposal(plan_id, {
         this_is: 'a proposal'
       }, function(prop_id) {
         return console.log("proposal ID is " + prop_id);
+      });
+      return models.Plan.addSupporter(plan_id, {
+        name: "Sammy Supporter",
+        email: "sam@supportmemaybe.net"
       });
     });
     return models.School.update(_id, {
