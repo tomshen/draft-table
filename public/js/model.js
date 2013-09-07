@@ -5,7 +5,6 @@
     sketchfabURL = "https://sketchfab.com/oembed?url=https://sketchfab.com/show/" + sketchfabId + "&maxheight=640&maxwidth=640";
     $container = $("#model-" + sketchfabId);
     return $.getJSON(sketchfabURL, function(data) {
-      console.log(data);
       return $container.html(data.html);
     });
   };
