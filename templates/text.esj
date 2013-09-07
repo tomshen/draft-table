@@ -1,0 +1,5 @@
+
+<!-- body text -->
+<p class="body-text <%= class %>" id=" <%= 'text' + id %>">
+	<% content %>
+</p>

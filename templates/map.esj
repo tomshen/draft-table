@@ -1,0 +1,4 @@
+<!-- map -->
+<div class="map <%= class %>" id=" <%= 'map' + id %>"> 
+	<%= content %>  Get the map from these coordinates
+</div>

@@ -1,0 +1,23 @@
+<div class="plan-container" id="<%= 'plan' + id %>">
+	<div class="plan-title"> <%= title %> </div>
+
+	<div class="interaction-buttons-container">
+		<!-- TODO: make this button link to the proposals at the bottom of the page -->
+		<div class="button proposals-button"> <%= proposal.length %> proposals</div>
+		<!-- TODO: make this button display a list of supporters on hover -->
+		<!-- TODO: make this button send a post to /plan/{plan}/support on click-->
+		<div class="button supporters-button"> <%= supporter.length %> supporters</div>
+	</div>
+
+	<div class="plan-content-container">
+		<!-- TODO: write logic to insert the elements of the proposal -->
+	</div>
+
+	<div class="proposals-container">
+		<!-- insert proposals -->
+
+		<a class="button new-proposal-button" href="/proposal/new">Make a new proposal</a>
+
+	</div>
+
+</div>
