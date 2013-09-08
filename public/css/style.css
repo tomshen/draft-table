@@ -276,7 +276,8 @@ form {
     content: "Add a Node:";
     display: block; }
   form ul {
-    padding: 22px 0; }
+    padding: 22px 0;
+    list-style-type: none; }
   form button, form input {
     font-family: "myriad-pro", helvetica, tahoma, sans-serif; }
   form button[type="submit"] {
