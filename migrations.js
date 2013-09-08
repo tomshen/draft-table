@@ -3,7 +3,7 @@
   var penn, plan1;
 
   penn = {
-    name: "University of Dicksylvania",
+    name: "University of Pennsylvania",
     email_domain: ".upenn.edu",
     cover_image: "/public/img/penn_cover.jpg",
     plans: []
