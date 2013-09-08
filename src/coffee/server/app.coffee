@@ -27,10 +27,10 @@ app.get '/:school/:plan', (req, res) ->
   models.Plan.get req.params.plan, (err, plan) ->
     res.render 'plan', plan
 
-app.get '/:school/:plan/proposal', (req, res) ->
+app.get '/:school/:plan/proposal/new', (req, res) ->
   models.School.get req.params.school, (err, school) ->
     models.Plan.get req.params.plan, (err, plan) ->
-      res.render 'new_proposal', { school: school, plan: plan }
+      res.render 'proposal_new', { school: school, plan: plan }
 
 # Views for POSTing
 app.post '/school/:school/plan/new', (req, res) ->
