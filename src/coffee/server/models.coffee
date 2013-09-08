@@ -156,11 +156,15 @@ Plan.addProposal = (plan_id, proposal, files, callback) ->
 # callback: (plan) ->
 Plan.get = (plan_id, callback)->
   db.collection('plans').findById plan_id, (err, doc) ->
-    async.map doc.proposals, (proposal_id, callbackOnComplete) ->
-      db.collection('proposals').findById(proposal_id, callbackOnComplete)
-    ,(err, proposals2) ->
-      doc.proposals = proposals2
-      callback err, doc
+    try
+      async.map doc.proposals, (proposal_id, callbackOnComplete) ->
+        db.collection('proposals').findById(proposal_id, callbackOnComplete)
+      ,(err, proposals2) ->
+        doc.proposals = proposals2
+        callback undefined, doc
+    catch e
+      console.log "There was an error!"
+      console.log e
 
 Plan.update = (_id, update_object)->
   db.collection('plans').updateById _id, {$set: update_object}

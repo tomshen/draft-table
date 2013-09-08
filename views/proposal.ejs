@@ -1,7 +1,7 @@
 <div class="proposal active" id="<%= 'proposal' + _id %>">
-	<div class="proposal-toggle"></div>
-	<div class="proposal-title"><%= title %></div>
-	<div class="proposal-supporters"><%= supporters.length %> supporter </div>
+	<div class="proposal-toggle toggleable"></div>
+	<div class="proposal-title toggleable"><%= title %></div>
+	<div class="proposal-supporters toggleable"><%= supporters.length %> supporter </div>
 	<div class="proposal-author"><%= author %></div>
 	<div class="proposal-extras">
 		<div class="proposal-content">
@@ -11,7 +11,7 @@
 		</div>
 
 		
-	<div class="button supporters-button">support this proposal</div>
+	<div class="button supporters-button proposal-support" data-proposal-id="<%= _id %>">support this proposal</div>
 
 		<div class="proposal-comments ">
 			<% comments.forEach(function (el, index) { %>
