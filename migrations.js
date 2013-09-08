@@ -152,3 +152,5 @@ var plan2 = {
     }
   ]
 };
+
+module.exports = {school: penn, plan: plan1}
