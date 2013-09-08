@@ -25,7 +25,7 @@ app.get '/:school', (req, res) ->
 
 app.get '/:school/:plan', (req, res) ->
   models.Plan.get req.params.plan, (err, plan) ->
-    res.render 'plan', { plan: plan, schoolId: req.params.school._id }
+    res.render 'plan', { plan: plan, schoolId: req.params.school }
 
 app.get '/:school/:plan/proposal/new', (req, res) ->
   models.School.get req.params.school, (err, school) ->
