@@ -60,7 +60,7 @@ var plan1 = {
     {
       type: "image",
       _class: "",
-      content: "/public/img/new-college-house-Chestnut-view-aerial.jpg"
+      content: "/public/img/new-college-house-ground-view.png"
     }, 
     {
       type: "image",
@@ -70,7 +70,7 @@ var plan1 = {
     {
       type: "image",
       _class: "",
-      content: "/public/img/new-college-house-top-right-01.jpg"
+      content: "/public/img/new-college-house-top-right-01.png"
     }, {
       type: "location",
       _class: "",
