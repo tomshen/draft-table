@@ -1,13 +1,12 @@
 <% layout('layout') -%>
 <div class="school-container">
-	<div class="header">
-		<img class="header-cover-image" src="<%= cover_image %>">
+	<div class="header" style="background-image:url('<%= cover_image %>');">
 		<%= name %>
 	</div>
 
 	<div class="nav">
 		<% for(var i = 0; i < plans.length; i++) { %>
-			<a href="/public/<%=_id%>/<%=plans[i]._id%>">
+			<a href="/<%=_id%>/<%=plans[i]._id%>">
 				<div class="nav-plan">
 					<img class="nav-plan-thumbnail" src="<%= plans[i].image_thumbnail %>">
 					<div class="nav-plan-title"> <%= plans[i].title %> </div>
