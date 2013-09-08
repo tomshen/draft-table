@@ -119,7 +119,7 @@ html, body {
 	text-shadow: $shadow-text;
 	vertical-align: bottom;
 
-	@include calc("padding-top", ( -1 * #{$header-text-size} + 25%) );
+	@include calc("padding-top", ( -1 * #{$header-text-size} + 10%) );
 	padding-bottom: $line-height * 1;
 	padding-left: $line-height * 2;
 
