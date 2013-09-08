@@ -1,5 +1,0 @@
-Express server listening on port \\.\pipe\a208975e-7dd7-4ae1-9b1f-018e4f8f16aa
-School _id is 522c6621441529b83e000001
-Plan _id is 522c6621441529b83e000002
-There was an error!
-[TypeError: Cannot read property 'plans' of null]
