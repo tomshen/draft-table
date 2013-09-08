@@ -45,7 +45,9 @@
   border: solid 1px #1fc834;
   background: #24dd3b;
   background: -webkit-gradient(linear, left top, left bottom, from(#3ae04f), to(#1fc834));
-  background: -moz-linear-gradient(top, #3ae04f, #1fc834); }
+  background: -moz-linear-gradient(top, #3ae04f, #1fc834);
+  display: inline;
+  margin-left: 66px; }
   .supporters-button:hover {
     background: #1fc834;
     background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
@@ -166,6 +168,8 @@ html, body {
     min-height: 440px;
     background-size: cover;
     background-position: center; }
+  .plan-container .image + .image {
+    margin-top: 44px; }
   .plan-container .map-container {
     min-height: 440px;
     width: 100%; }
@@ -186,17 +190,17 @@ html, body {
     font-weight: 400;
     font-size: 18px; }
   .proposals-container .proposal {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-    cursor: pointer;
     padding: 0.2em 0; }
     .proposals-container .proposal .proposal-toggle, .proposals-container .proposal .proposal-title, .proposals-container .proposal .proposal-supporters {
-      display: inline; }
+      display: inline;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      cursor: pointer; }
     .proposals-container .proposal .proposal-toggle {
       margin-left: 11px; }
     .proposals-container .proposal:not(.open) .proposal-toggle:before {
