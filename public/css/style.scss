@@ -119,7 +119,7 @@ html, body {
 	text-shadow: $shadow-text;
 	vertical-align: bottom;
 
-	@include calc("padding-top", ( -1 * #{$header-text-size} + 10%) );
+	@include calc("padding-top", ( -1 * #{$header-text-size} + 25%) );
 	padding-bottom: $line-height * 1;
 	padding-left: $line-height * 2;
 
@@ -165,7 +165,13 @@ html, body {
 
 
 .interaction-buttons-container {
-	@include label-text;
+
+	.proposals-label, .supporters-label {
+		font-size: $base-text-size;
+		line-height: $line-height;
+		margin-left: 3 * $line-height;
+	}
+
 }
 
 .plan-container {
@@ -219,7 +225,7 @@ html, body {
 		padding-top: 0;
 	}
 
-	.subhead {
+	.subheader {
 		@include subhead-text;
 
 		font-size: $line-height;
@@ -238,6 +244,11 @@ html, body {
 		background-size: cover;
 		background-position: center;
 	}
+
+	.map-container {
+		min-height: $line-height * 20;
+		width: 100%;
+	}
 }
 
 
@@ -254,10 +265,51 @@ html, body {
 	border-bottom: 1px solid $proposals-border-color;
 	padding-bottom: 2 * $line-height;
 
-	.proposal-title, .proposal-supporters, .proposal-author, .comment-attribution {
+	.proposal-toggle, .proposal-title, .proposal-supporters, .proposal-author, .comment-attribution {
 		@include subhead-text;
 		font-size: $base-text-size;
-		background-color: $foreground-color;
+
+
+	}
+
+	.proposal {
+		@include button;
+
+		padding: 0.2em 0;
+
+		.proposal-toggle, .proposal-title, .proposal-supporters{
+			display: inline;
+		}
+
+		.proposal-toggle {
+			margin-left: 0.5 * $line-height;
+		}
+
+		&:not(.open) .proposal-toggle:before {
+			content:"+";
+		}
+		&.open .proposal-toggle:before{
+			content:"-";
+		}
+
+
+		&:last-of-type {
+			margin-bottom: 0.5 * $line-height;
+		}
+
+		.proposal-supporters {
+			color: $supporter-color;
+			font-weight: bold;
+		}
+
+		.proposal-title {
+			font-weight: 700;
+		}
+
+		.proposal-author {
+			opacity: 0.5;
+			margin-left: 1 * $line-height;
+		}
 
 	}
 
@@ -293,4 +345,21 @@ html, body {
 	.new-proposal-button {
 		margin-left: 2 * $line-height ;
 	}
+}
+
+
+
+form {
+	background-color: $foreground-color;
+	max-width: 20 * $line-height;
+	margin: 2*$line-height auto;
+
+	padding: 1 * $line-height;
+
+	.form-title {
+		@include title-text;
+		font-size: 2 * $base-text-size;
+	}
+
+
 }
