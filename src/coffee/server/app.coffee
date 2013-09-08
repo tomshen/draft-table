@@ -14,6 +14,7 @@ app.set 'views', __dirname + '/views'
 app.configure () ->
   app.set 'port', process.env.PORT || 3000
   app.use '/public', express.static(path.join(__dirname, 'public'))
+  app.use express.bodyParser({keepExtensions: true})
 
 # User-facing views
 app.get '/', (req, res) ->
