@@ -360,10 +360,114 @@ form {
 	margin: 2*$line-height auto;
 
 	padding: 1 * $line-height;
+	overflow: hidden;
 
 	.form-title {
 		@include title-text;
 		font-size: 2 * $base-text-size;
+		margin-bottom: 1 * $line-height;
+		clear: both;
+	}
+
+	* {
+		float: left;
+		clear: both;
+	}
+
+	li, ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul:before {
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		content: "Add a Node:";
+		display: block;
+	}	
+
+	ul {
+		padding: $line-height 0;
+	}
+
+	button, input {
+
+		font-family: $title-stack;
+	}
+
+	button[type="submit"]  {
+		@include button-gradient($new-proposal-color);
+		border-radius: 4px;
+		color: white;
+	}
+
+	.text-input-container:before {
+		content: "Text Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.prominent-input-container:before {
+		content: "Prominent Text Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}	
+
+	.subheader-input-container:before {
+		content: "Subheader Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.image-input-container:before {
+		content: "Image Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.image-strip-input-container:before {
+		content: "Multi Image Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.model-input-container:before {
+		content: "Model Input Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.location-input-container:before {
+		content: "Location Input Node";
+		@include subhead-text;
+		font-size: $base-text-size;
+		line-height: $line-height;
+		font-weight: 700;
+		display: block;
+	}
+
+	.location-input-container, .model-input-container, .image-strip-input-container, .image-input-container, .subheader-input-container, .prominent-input-container, .prominent-input-container, .text-input-container{
+		margin-top: $line-height;
 	}
 
 
