@@ -186,17 +186,17 @@ html, body {
     font-weight: 400;
     font-size: 18px; }
   .proposals-container .proposal {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-    cursor: pointer;
     padding: 0.2em 0; }
     .proposals-container .proposal .proposal-toggle, .proposals-container .proposal .proposal-title, .proposals-container .proposal .proposal-supporters {
-      display: inline; }
+      display: inline;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      cursor: pointer; }
     .proposals-container .proposal .proposal-toggle {
       margin-left: 11px; }
     .proposals-container .proposal:not(.open) .proposal-toggle:before {

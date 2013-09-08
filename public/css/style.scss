@@ -273,12 +273,11 @@ html, body {
 	}
 
 	.proposal {
-		@include button;
 
 		padding: 0.2em 0;
-
 		.proposal-toggle, .proposal-title, .proposal-supporters{
 			display: inline;
+			@include button;
 		}
 
 		.proposal-toggle {
