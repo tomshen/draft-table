@@ -1,0 +1,12 @@
+Application has thrown an uncaught exception and is terminated:
+TypeError: Cannot read property 'plans' of undefined
+    at \\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\models.js:86:25
+    at Object.exports.error (\\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\node_modules\mongoskin\lib\mongoskin\utils.js:27:5)
+    at EventEmitter.<anonymous> (\\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\node_modules\mongoskin\lib\mongoskin\utils.js:66:17)
+    at EventEmitter.g (events.js:175:14)
+    at EventEmitter.emit (events.js:98:17)
+    at null.<anonymous> (\\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\node_modules\mongoskin\lib\mongoskin\collection.js:117:31)
+    at EventEmitter.g (events.js:175:14)
+    at EventEmitter.emit (events.js:98:17)
+    at null.<anonymous> (\\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\node_modules\mongoskin\lib\mongoskin\db.js:98:22)
+    at null.<anonymous> (\\10.241.250.88\volume-8-default\155b50152ace6417c941\9be07583905143b49ac4025fd7400f77\site\wwwroot\node_modules\mongoskin\lib\mongoskin\db.js:109:11)

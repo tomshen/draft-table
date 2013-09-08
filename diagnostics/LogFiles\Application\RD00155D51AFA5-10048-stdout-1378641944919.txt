@@ -1,0 +1,6 @@
+i am being deployed on azure
+Express server listening on port \\.\pipe\e378b62d-d6bf-4b20-bf20-88f82c49dc90
+School _id is 522c681c68ecb24027000001
+Plan _id is 522c681c68ecb24027000002
+There was an error!
+[TypeError: Cannot read property 'plans' of null]
