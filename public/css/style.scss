@@ -101,7 +101,8 @@ $nav-width:  10.5 * $line-height;
 .supporters-button {
 	@include button-gradient($supporter-color);
 	display: inline;
-	margin-left: 3 * $line-height;
+	margin-left: 3 * $line-height - 6px;
+	line-height: 2;
 }
 
 html, body {

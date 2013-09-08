@@ -1,55 +1,345 @@
-/*
-Syntax error: Invalid CSS after "		display: block;": expected "}", was "<<<<<<< HEAD"
-        on line 147 of public/css/style.scss
+.button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  cursor: pointer;
+  padding: 0.2em 0.3em;
+  text-align: center;
+  color: white;
+  border-radius: 0.5em;
+  text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.2); }
 
-142: 		margin-left: 1 * $line-height;
-143: 		padding-top: 1 * $line-height;
-144: 
-145: 		display: block;
-146: 
-147: <<<<<<< HEAD
-148: =======
-149: 		color: white;
-150: 		text-decoration: none;
-151: 
-152: >>>>>>> b9f03151a3bbbac002c80a03982ee4c2e67dd79b
+.proposals-button {
+  border: solid 1px #1086c8;
+  background: #1296e0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1fa3ed), to(#1086c8));
+  background: -moz-linear-gradient(top, #1fa3ed, #1086c8); }
+  .proposals-button:hover {
+    background: #1086c8;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1296e0), to(#0e76b1));
+    background: -moz-linear-gradient(top, #1296e0, #0e76b1); }
+  .proposals-button:active {
+    background: #1296e0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1086c8), to(#1fa3ed));
+    background: -moz-linear-gradient(top, #1086c8, #1fa3ed); }
 
-Backtrace:
-public/css/style.scss:147
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1145:in `expected'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1083:in `expected'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1078:in `tok!'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:535:in `block'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:528:in `ruleset'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:590:in `block in declaration_or_ruleset'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1121:in `call'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:1121:in `rethrow'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:591:in `declaration_or_ruleset'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:553:in `block_child'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:545:in `block_contents'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:534:in `block'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:528:in `ruleset'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:552:in `block_child'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:545:in `block_contents'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:82:in `stylesheet'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/scss/parser.rb:27:in `parse'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:342:in `_to_tree'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `each'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/lib/sass/plugin/compiler.rb:283:in `block in watch'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `call'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Users/sibnerian/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/darwin.rb:38:in `block in start'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"		display: block;\": expected \"}\", was \"<<<<<<< HEAD\"\A         on line 147 of public/css/style.scss\A \A 142: 		margin-left: 1 * $line-height;\A 143: 		padding-top: 1 * $line-height;\A 144: \A 145: 		display: block;\A 146: \A 147: <<<<<<< HEAD\A 148: =======\A 149: 		color: white;\A 150: 		text-decoration: none;\A 151: \A 152: >>>>>>> b9f03151a3bbbac002c80a03982ee4c2e67dd79b"; }
+.new-proposal-button {
+  border: solid 1px #ef9003;
+  background: #fc9d10;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fca729), to(#ef9003));
+  background: -moz-linear-gradient(top, #fca729, #ef9003); }
+  .new-proposal-button:hover {
+    background: #ef9003;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fc9d10), to(#d68103));
+    background: -moz-linear-gradient(top, #fc9d10, #d68103); }
+  .new-proposal-button:active {
+    background: #fc9d10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ef9003), to(#fca729));
+    background: -moz-linear-gradient(top, #ef9003, #fca729); }
+
+.supporters-button {
+  border: solid 1px #1fc834;
+  background: #24dd3b;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3ae04f), to(#1fc834));
+  background: -moz-linear-gradient(top, #3ae04f, #1fc834);
+  display: inline;
+  margin-left: 60px;
+  line-height: 2; }
+  .supporters-button:hover {
+    background: #1fc834;
+    background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
+    background: -moz-linear-gradient(top, #24dd3b, #1cb22e); }
+  .supporters-button:active {
+    background: #24dd3b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1fc834), to(#3ae04f));
+    background: -moz-linear-gradient(top, #1fc834, #3ae04f); }
+
+html, body {
+  font-family: "chaparral-pro", georgia;
+  font-size: 14px;
+  background-color: #111114; }
+
+.header {
+  background-size: cover;
+  font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-size: 72px;
+  color: white;
+  text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7);
+  vertical-align: bottom;
+  padding-top: -moz-calc(-1 * 72px + 25%);
+  padding-top: -webkit-calc(-1 * 72px + 25%);
+  padding-top: calc(-1 * 72px + 25%);
+  padding-bottom: 22px;
+  padding-left: 44px;
+  box-shadow: 0px 2px 5px black;
+  margin-bottom: 22px; }
+
+.nav {
+  font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+  position: absolute;
+  left: 0;
+  color: white;
+  z-index: 500; }
+  .nav .nav-plan {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    cursor: pointer;
+    width: 176px;
+    margin-left: 22px;
+    padding-top: 22px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+    -moz-transition: -moz-transform .25s ease-in-out;
+    transition: transform .25s ease-in-out; }
+  .nav .nav-plan:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05); }
+  .nav .nav-plan-thumbnail {
+    width: 100%;
+    box-shadow: 0px 2px 5px black; }
+  .nav .nav-plan-title {
+    text-align: center;
+    text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7); }
+
+.interaction-buttons-container .proposals-label, .interaction-buttons-container .supporters-label {
+  font-size: 18px;
+  line-height: 22px;
+  margin-left: 66px; }
+
+.plan-container {
+  position: relative;
+  box-shadow: 0px 2px 5px black;
+  padding: 22px 0 0 0;
+  margin-bottom: 44px;
+  background-color: #f1f1dc;
+  width: -moz-calc(-1 * 231px + 100%);
+  width: -webkit-calc(-1 * 231px + 100%);
+  width: calc(-1 * 231px + 100%);
+  float: right;
+  margin-right: 44px; }
+  .plan-container .plan-title {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    padding: 22px 0;
+    margin: 0 44px;
+    font-size: 54px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    margin-right: 110px; }
+  .plan-container .body-text {
+    max-width: 660px;
+    padding: 22px 0;
+    margin: 0 44px;
+    font-size: 18px;
+    line-height: 22px; }
+  .plan-container .body-text + .body-text {
+    padding-top: 0; }
+  .plan-container .body-text + .body-text {
+    padding-top: 0; }
+  .plan-container .subheader {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 22px; }
+  .plan-container .prominent {
+    max-width: 990px;
+    font-size: 27px;
+    line-height: 33px;
+    font-style: italic; }
+  .plan-container .image.full-bleed {
+    width: 100%;
+    min-height: 440px;
+    background-size: cover;
+    background-position: center; }
+  .plan-container .image + .image {
+    margin-top: 44px; }
+  .plan-container .map-container {
+    min-height: 440px;
+    width: 100%; }
+    .plan-container .map-container .map {
+      width: 100%;
+      height: 100%; }
+
+.proposals-background {
+  border-top: 1px solid #b1b1a6;
+  background: #e5e5d3;
+  padding: 0 44px 44px 44px; }
+
+.proposals-container {
+  background-color: #f1f1dc;
+  border-left: 1px solid #b1b1a6;
+  border-right: 1px solid #b1b1a6;
+  border-bottom: 1px solid #b1b1a6;
+  padding-bottom: 44px; }
+  .proposals-container .proposal-toggle, .proposals-container .proposal-title, .proposals-container .proposal-supporters, .proposals-container .proposal-author, .proposals-container .comment-attribution {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px; }
+  .proposals-container .proposal {
+    padding: 0.2em 0; }
+    .proposals-container .proposal .proposal-toggle, .proposals-container .proposal .proposal-title, .proposals-container .proposal .proposal-supporters {
+      display: inline;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      cursor: pointer; }
+    .proposals-container .proposal .proposal-toggle {
+      margin-left: 11px; }
+    .proposals-container .proposal:not(.open) .proposal-toggle:before {
+      content: "+"; }
+    .proposals-container .proposal.open .proposal-toggle:before {
+      content: "-"; }
+    .proposals-container .proposal:last-of-type {
+      margin-bottom: 11px; }
+    .proposals-container .proposal .proposal-supporters {
+      color: #24dd3b;
+      font-weight: bold; }
+    .proposals-container .proposal .proposal-title {
+      font-weight: 700; }
+    .proposals-container .proposal .proposal-author {
+      opacity: 0.5;
+      margin-left: 22px; }
+  .proposals-container .proposal-extras {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 2s ease-in-out;
+    -moz-transition: max-height 2s ease-in-out;
+    transition: max-height 2s ease-in-out; }
+  .proposals-container .proposal.open .proposal-extras {
+    max-height: 1500px; }
+  .proposals-container .proposal-comment {
+    margin: 22px 0 22px 44px;
+    padding-left: 22px;
+    line-height: 22px;
+    font-size: 13.5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    max-width: 660px; }
+    .proposals-container .proposal-comment .comment-author {
+      font-weight: 700; }
+    .proposals-container .proposal-comment .comment-date {
+      opacity: 0.5; }
+  .proposals-container .new-proposal-button {
+    margin-left: 44px; }
+
+form {
+  background-color: #f1f1dc;
+  max-width: 440px;
+  margin: 44px auto;
+  padding: 22px;
+  overflow: hidden; }
+  form .form-title {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    font-size: 36px;
+    margin-bottom: 22px;
+    clear: both; }
+  form * {
+    float: left;
+    clear: both; }
+  form li, form ul {
+    margin: 0;
+    padding: 0; }
+  form ul:before {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    content: "Add a Node:";
+    display: block; }
+  form ul {
+    padding: 22px 0; }
+  form button, form input {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif; }
+  form button[type="submit"] {
+    border: solid 1px #ef9003;
+    background: #fc9d10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fca729), to(#ef9003));
+    background: -moz-linear-gradient(top, #fca729, #ef9003);
+    border-radius: 4px;
+    color: white; }
+    form button[type="submit"]:hover {
+      background: #ef9003;
+      background: -webkit-gradient(linear, left top, left bottom, from(#fc9d10), to(#d68103));
+      background: -moz-linear-gradient(top, #fc9d10, #d68103); }
+    form button[type="submit"]:active {
+      background: #fc9d10;
+      background: -webkit-gradient(linear, left top, left bottom, from(#ef9003), to(#fca729));
+      background: -moz-linear-gradient(top, #ef9003, #fca729); }
+  form .text-input-container:before {
+    content: "Text Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .prominent-input-container:before {
+    content: "Prominent Text Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .subheader-input-container:before {
+    content: "Subheader Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .image-input-container:before {
+    content: "Image Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .image-strip-input-container:before {
+    content: "Multi Image Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .model-input-container:before {
+    content: "Model Input Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .location-input-container:before {
+    content: "Location Input Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .location-input-container, form .model-input-container, form .image-strip-input-container, form .image-input-container, form .subheader-input-container, form .prominent-input-container, form .prominent-input-container, form .text-input-container {
+    margin-top: 22px; }
