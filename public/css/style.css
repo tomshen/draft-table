@@ -76,9 +76,9 @@ html, body {
   color: white;
   text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7);
   vertical-align: bottom;
-  padding-top: -moz-calc(-1 * 72px + 10%);
-  padding-top: -webkit-calc(-1 * 72px + 10%);
-  padding-top: calc(-1 * 72px + 10%);
+  padding-top: -moz-calc(-1 * 72px + 25%);
+  padding-top: -webkit-calc(-1 * 72px + 25%);
+  padding-top: calc(-1 * 72px + 25%);
   padding-bottom: 22px;
   padding-left: 44px;
   box-shadow: 0px 2px 5px black;
@@ -116,8 +116,10 @@ html, body {
     text-align: center;
     text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7); }
 
-.interaction-buttons-container {
-  font-family: "myriad-pro", helvetica, tahoma, sans-serif; }
+.interaction-buttons-container .proposals-label, .interaction-buttons-container .supporters-label {
+  font-size: 18px;
+  line-height: 22px;
+  margin-left: 66px; }
 
 .plan-container {
   position: relative;
@@ -176,11 +178,38 @@ html, body {
   border-right: 1px solid #b1b1a6;
   border-bottom: 1px solid #b1b1a6;
   padding-bottom: 44px; }
-  .proposals-container .proposal-title, .proposals-container .proposal-supporters, .proposals-container .proposal-author, .proposals-container .comment-attribution {
+  .proposals-container .proposal-toggle, .proposals-container .proposal-title, .proposals-container .proposal-supporters, .proposals-container .proposal-author, .proposals-container .comment-attribution {
     font-family: "myriad-pro", helvetica, tahoma, sans-serif;
     font-weight: 400;
-    font-size: 18px;
-    background-color: #f1f1dc; }
+    font-size: 18px; }
+  .proposals-container .proposal {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    cursor: pointer;
+    padding: 0.2em 0; }
+    .proposals-container .proposal .proposal-toggle, .proposals-container .proposal .proposal-title, .proposals-container .proposal .proposal-supporters {
+      display: inline; }
+    .proposals-container .proposal .proposal-toggle {
+      margin-left: 11px; }
+    .proposals-container .proposal:not(.open) .proposal-toggle:before {
+      content: "+"; }
+    .proposals-container .proposal.open .proposal-toggle:before {
+      content: "-"; }
+    .proposals-container .proposal:last-of-type {
+      margin-bottom: 11px; }
+    .proposals-container .proposal .proposal-supporters {
+      color: #24dd3b;
+      font-weight: bold; }
+    .proposals-container .proposal .proposal-title {
+      font-weight: 700; }
+    .proposals-container .proposal .proposal-author {
+      opacity: 0.5;
+      margin-left: 22px; }
   .proposals-container .proposal-extras {
     overflow: hidden;
     max-height: 0;
@@ -202,3 +231,14 @@ html, body {
       opacity: 0.5; }
   .proposals-container .new-proposal-button {
     margin-left: 44px; }
+
+form {
+  background-color: #f1f1dc;
+  max-width: 440px;
+  margin: 44px auto;
+  padding: 22px; }
+  form .form-title {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    font-size: 36px; }

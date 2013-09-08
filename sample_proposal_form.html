@@ -6,12 +6,13 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!-- end typkit code -->
 
-  
   <link rel="stylesheet" href="/public/css/normalize.css">
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
   <form id="proposal" action="/plan/<%=plan._id%>/proposal/new" method="POST" enctype="multipart/form-data" target="/<%=school._id%>/<%=plan._id%>">
+
+    <label class="form-title"> New Proposal</label>
 
     <input type="text" placeholder="Title" name="title">
 
