@@ -152,7 +152,7 @@ html, body {
     padding-top: 0; }
   .plan-container .body-text + .body-text {
     padding-top: 0; }
-  .plan-container .subhead {
+  .plan-container .subheader {
     font-family: "myriad-pro", helvetica, tahoma, sans-serif;
     font-weight: 400;
     font-size: 22px; }
