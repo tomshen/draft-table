@@ -71,10 +71,15 @@ var plan1 = {
       type: "image",
       _class: "",
       content: "/public/img/new-college-house-top-right-01.jpg"
+    }, 
+    {
+      type: "model",
+      _class: "",
+      content: "c7aabd879170400e8a0f4ce177d61903"
     }, {
       type: "location",
       _class: "",
-      content: [39.953067, -75.190902]
+      content: [39.953438,-75.190927]
     }
   ]
 };
@@ -126,24 +131,24 @@ var plan2 = {
       _class: "",
       content: "/public/img/conference-room-table-view-01.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-02.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-table-view-02.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-sketch-people-03.png"
     }, {
       type: "location",
       _class: "",
-      content: [39.948043,-75.193416]
+      content: [39.947467,-75.192686]
     }
   ]
 };

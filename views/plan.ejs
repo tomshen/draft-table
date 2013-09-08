@@ -12,12 +12,13 @@
 	</div>
 
 	<div class="plan-content-container">
-		<!-- TODO: write logic to insert the elements of the proposal -->
+		<% plan.elements.forEach(function (el, index) { %>
+			<%- partial('partials/' + el.type, el) %>
+		<% }); %>
 	</div>
 
 	<div class="proposals-background">
 		<div class="proposals-container">
-			<!-- insert proposals -->
 
 			<a class="button new-proposal-button" href="/<%=schoolId%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
 
