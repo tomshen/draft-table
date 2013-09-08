@@ -6,7 +6,8 @@ uploads = require './uploads.js'
 log = console.log
 # w:0 gets rid of the default write concern message, but may be unsafe for production since it doesn't force acknowledgement
 # of writes to the DB
-db = mongo.db("mongodb://127.0.0.1/test", {w: 0})
+dbname = process.env.CUSTOMCONNSTR_MONGOLAB_URI || "mongodb://127.0.0.1/test"
+db = mongo.db(dbname, {w: 0})
 
 pluralize = (word) ->
   word + 's'
