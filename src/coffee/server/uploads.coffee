@@ -40,3 +40,6 @@ uploadImage = (imageFile, callback) ->
     newPath = __dirname + '/public/img/' + fileName
     fs.writeFile newPath, data, (err) ->
       callback err, fileName
+
+
+module.exports = {uploadImage: uploadImage, uploadModel: uploadModel}
