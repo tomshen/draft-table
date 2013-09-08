@@ -1,3 +1,9 @@
+penn =
+  name: "University of Dicksylvania"
+  email_domain: ".upenn.edu"
+  cover_image: "/public/img/penn_cover.jpg"
+  plans: []
+
 plan1 =
   title: "College House, Hill Square"
   image_thumbnail: "/public/img/college_house_thumb.jpg"
