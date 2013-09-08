@@ -25,8 +25,9 @@ app.get '/:school', (req, res) ->
     res.render 'school', school
 
 app.get '/:school/:plan', (req, res) ->
-  models.Plan.get req.params.plan, (err, plan) ->
-    res.render 'plan', { plan: plan, schoolId: req.params.school }
+  models.School.get req.params.school, (err, school) ->
+    models.Plan.get req.params.plan, (err, plan) ->
+      res.render 'plan', { plan: plan, school: school }
 
 app.get '/:school/:plan/proposal/new', (req, res) ->
   models.School.get req.params.school, (err, school) ->
@@ -42,7 +43,7 @@ app.post '/plan/:plan/support', (req, res) ->
 
 app.post '/school/:school/plan/:plan/proposal/new', (req, res) ->
   models.Plan.addProposal req.params.plan, req.body, req.files, (id) -> 
-    res.redirect "/#{req.params.school}/#{req.params.plan}" 
+    res.redirect "/#{req.params.school}" + '/#' + "#{req.params.plan}" 
 
 app.post '/proposal/:proposal/support', (req, res) ->
   models.Proposal.addSupporter req.params.proposal, req.body

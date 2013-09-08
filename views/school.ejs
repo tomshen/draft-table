@@ -1,21 +1,22 @@
 <% layout('layout') -%>
 <div class="school-container">
+
 	<div class="header" style="background-image:url('<%= cover_image %>');">
 		<%= name %>
 	</div>
 
 	<div class="nav">
 		<% for(var i = 0; i < plans.length; i++) { %>
-			<a href="/<%=_id%>/<%=plans[i]._id%>">
-				<div class="nav-plan">
-					<img class="nav-plan-thumbnail" src="<%= plans[i].image_thumbnail %>">
-					<div class="nav-plan-title"> <%= plans[i].title %> </div>
-				</div>
+			<a href="#<%=plans[i]._id%>" class="plan-link nav-plan">
+				<img class="nav-plan-thumbnail" src="<%= plans[i].image_thumbnail %>">
+				<div class="nav-plan-title"> <%= plans[i].title %> </div>
 			</a>
 		<% } %>
 	</div>
 
-	<div class="plan-container">
-		<!-- insert proposal here -->
+	<div id="plans-container">
+		<% plans.forEach(function (plan, index) { %>
+			<%- partial('plan', { plan: plan, school: { "_id": _id } }) %>
+		<% }); %>
 	</div>
 </div>

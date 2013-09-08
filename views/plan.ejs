@@ -1,6 +1,4 @@
-<% layout('layout') -%>
-
-<div class="plan-container" id="<%= 'plan' + plan._id %>">
+<div class="plan-container" id="<%= plan._id %>">
 	<div class="plan-title"> <%= plan.title %> </div>
 
 	<div class="interaction-buttons-container">
@@ -25,10 +23,7 @@
 			<% plan.proposals.forEach(function (proposal, index) { %>
 				<%- partial('proposal', proposal) %>
 			<% }); %>
-			<a class="button new-proposal-button" href="/<%=schoolId%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
+			<a class="button new-proposal-button" href="/<%=school._id%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
 		</div>
 	</div>
-
-
-
 </div>
