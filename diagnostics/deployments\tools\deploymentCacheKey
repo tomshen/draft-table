@@ -1,2 +1,0 @@
-1.23.20730.4
--y --no-dot-deployment -r "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\repository" -o "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\deployments\tools" --node --sitePath "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\repository"

@@ -1,3 +1,0 @@
-i am being deployed on azure
-Express server listening on port \\.\pipe\3dffd3b3-9ee1-4b1c-8685-0eb047039b43
-School _id is 522c7063d95e6b2431000001
