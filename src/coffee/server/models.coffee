@@ -54,11 +54,11 @@ School.update = (_id, update_object) ->
 
 # callback (err, doc) -> ...
 School.get = (school_id, callback) ->
-  db.collection('schools').findOne school_id, (err, doc) ->
+  db.collection('schools').findById school_id, (err, doc) ->
     async.map doc.plans, (plan_id, callbackOnComplete) ->
-      db.collection('plans').findOne(plan_id, callbackOnComplete)
-    ,(err, plans) ->
-      doc.plans = plans
+      db.collection('plans').findById(plan_id, callbackOnComplete)
+    ,(err, plans2) ->
+      doc.plans = plans2
       callback err, doc
 
 
