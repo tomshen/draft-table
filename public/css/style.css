@@ -166,6 +166,9 @@ html, body {
     min-height: 440px;
     background-size: cover;
     background-position: center; }
+  .plan-container .map-container {
+    min-height: 440px;
+    width: 100%; }
 
 .proposals-background {
   border-top: 1px solid #b1b1a6;

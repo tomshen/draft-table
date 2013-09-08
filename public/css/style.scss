@@ -244,6 +244,11 @@ html, body {
 		background-size: cover;
 		background-position: center;
 	}
+
+	.map-container {
+		min-height: $line-height * 20;
+		width: 100%;
+	}
 }
 
 
