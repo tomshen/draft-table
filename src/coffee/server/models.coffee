@@ -53,7 +53,13 @@ School.update = (_id, update_object) ->
   db.collection('schools').updateById _id, {$set: update_object}
 
 School.get = (school_id, callback) ->
-  db.collection('schools').findById(school_id, callback)
+  db.collection('schools').findById(school_id, (err, doc)->
+    async.map doc.plans, (plan_id, callback)->
+      db.collection('plans').findById plan_id, callback
+    , (err, array_of_plans)->
+      doc.plans = array_of_plans
+      callback doc
+  )
 
 # callback : (plan_id) -> ...
 School.addPlan = (school_id, plan, files, callback) ->
