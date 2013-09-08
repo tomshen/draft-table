@@ -210,6 +210,9 @@ School.create migrations.school, (_id)->
   console.log "School _id is #{_id}"
   School.addPlan(_id, migrations.plan1, {}, (plan_id)->
     console.log "Plan _id is #{plan_id}"
+    School.addPlan(_id, migrations.plan2, {}, (plan2_id)->
+      console.log "Plan 2 _id is #{plan2_id}"
+    )
   )
 
 
