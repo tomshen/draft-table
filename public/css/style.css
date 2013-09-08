@@ -45,7 +45,9 @@
   border: solid 1px #1fc834;
   background: #24dd3b;
   background: -webkit-gradient(linear, left top, left bottom, from(#3ae04f), to(#1fc834));
-  background: -moz-linear-gradient(top, #3ae04f, #1fc834); }
+  background: -moz-linear-gradient(top, #3ae04f, #1fc834);
+  display: inline;
+  margin-left: 66px; }
   .supporters-button:hover {
     background: #1fc834;
     background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
