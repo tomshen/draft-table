@@ -9,7 +9,7 @@ log = console.log
 db = mongo.db('localhost:27017/test', {w: 0})
 
 pluralize = (word) ->
-  word + 's' 
+  word + 's'
 
 isNumber = (n) ->
   return !isNaN(parseFloat(n)) and isFinite(n);
@@ -30,7 +30,7 @@ addChildOfTypeById = (type, parentCollectionName, parent_id, doc_id, callback) -
   db.collection(parentCollectionName).findById parent_id, (err, doc) ->
     fieldName = pluralize(type)
     child_array = doc[fieldName]
-    child_array.push doc_id 
+    child_array.push doc_id
     update_obj = {}
     update_obj[fieldName] = child_array
     update parentCollectionName, parent_id, {$set: update_obj}, callback
@@ -52,18 +52,19 @@ School.create = (school, callback) ->
 School.update = (_id, update_object) ->
   db.collection('schools').updateById _id, {$set: update_object}
 
+# callback (err, doc) -> ...
 School.get = (school_id, callback) ->
   db.collection('schools').findById(school_id, (err, doc)->
     async.map doc.plans, (plan_id, callback)->
       db.collection('plans').findById plan_id, callback
     , (err, array_of_plans)->
       doc.plans = array_of_plans
-      callback doc
+      callback null, doc
   )
 
 # callback : (plan_id) -> ...
 School.addPlan = (school_id, plan, files, callback) ->
-  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback 
+  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback
 
 
 makeElement = (elementName, content, _class)->
@@ -86,7 +87,7 @@ Plan.addProposal = (plan_id, proposal, files, callback) ->
   ).each(
     (pair)->
       _class = pair[0].split('-')[2]
-      if isNumber(_class) 
+      if isNumber(_class)
         _class = undefined
       element = makeElement pair[0], pair[1], _class
       elements.push element
@@ -139,7 +140,7 @@ Plan.addProposal = (plan_id, proposal, files, callback) ->
           file_names = []
           async.each(array_of_images, (file, cb)->
             uploads.uploadImage(file, (err, fileName)->
-              if err 
+              if err
                 throw err
               file_names.push fileName
               cb()
@@ -185,7 +186,7 @@ Proposal.addComment = (proposal_id, comment) ->
   updateByPush proposal_id, comment, 'comments', 'proposals'
 
 
-methods = 
+methods =
   School: School
   Plan: Plan
   Proposal: Proposal
