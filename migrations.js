@@ -126,17 +126,17 @@ var plan2 = {
       _class: "",
       content: "/public/img/conference-room-table-view-01.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-02.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-table-view-02.jpg"
     }, 
-     {
+    {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-sketch-people-03.png"
