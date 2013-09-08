@@ -76,9 +76,9 @@ html, body {
   color: white;
   text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7);
   vertical-align: bottom;
-  padding-top: -moz-calc(-1 * 72px + 25%);
-  padding-top: -webkit-calc(-1 * 72px + 25%);
-  padding-top: calc(-1 * 72px + 25%);
+  padding-top: -moz-calc(-1 * 72px + 10%);
+  padding-top: -webkit-calc(-1 * 72px + 10%);
+  padding-top: calc(-1 * 72px + 10%);
   padding-bottom: 22px;
   padding-left: 44px;
   box-shadow: 0px 2px 5px black;
