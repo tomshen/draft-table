@@ -165,9 +165,6 @@ html, body {
 
 
 .interaction-buttons-container {
-	position: absolute;
-	right: 2 * $line-height;
-	top: 1 * $line-height + 8px + 3 * $base-text-size;
 	@include label-text;
 }
 

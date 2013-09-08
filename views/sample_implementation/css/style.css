@@ -117,9 +117,6 @@ html, body {
     text-shadow: 0px 1px 0.1em rgba(0, 0, 0, 0.7), 0px 0px 1px rgba(0, 0, 0, 0.7); }
 
 .interaction-buttons-container {
-  position: absolute;
-  right: 44px;
-  top: 84px;
   font-family: "myriad-pro", helvetica, tahoma, sans-serif; }
 
 .plan-container {
