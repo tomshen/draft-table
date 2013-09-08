@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <id>b07636b2a9b348ed49b29dc268120c274df6a478</id>
+  <author>Ian Sibner</author>
+  <deployer>$draft-table</deployer>
+  <authorEmail>sibnerian@gmail.com</authorEmail>
+  <message>    ls
+</message>
+  <progress></progress>
+  <status>Success</status>
+  <statusText></statusText>
+  <lastSuccessEndTime>2013-09-08T12:06:55.6964201Z</lastSuccessEndTime>
+  <receivedTime>2013-09-08T12:04:09.5985529Z</receivedTime>
+  <startTime>2013-09-08T12:06:52.946508Z</startTime>
+  <endTime>2013-09-08T12:06:55.6964201Z</endTime>
+  <complete>True</complete>
+  <is_temp>False</is_temp>
+  <is_readonly>False</is_readonly>
+</deployment>

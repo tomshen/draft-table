@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entries>
+  <entry time="2013-09-08T12:41:39.7246746Z" id="748668cf-437b-4387-accf-75ea86a61d73" type="0">
+    <message>Updating branch '3b8ada548fb5f5602fd0b038e4effe38fc6fa4b2'.</message>
+  </entry>
+  <entry time="2013-09-08T12:41:40.0059242Z" id="d5f1e473-fbe9-4351-a8ad-590e8a7be97e" type="0">
+    <message>Updating submodules.</message>
+  </entry>
+  <entry time="2013-09-08T12:41:40.0528039Z" id="3ba99f05-7109-4f1a-b7d9-2f1f44a377e4" type="0">
+    <message>Preparing deployment for commit id '3b8ada548f'.</message>
+  </entry>
+  <entry time="2013-09-08T12:41:40.1629577Z" id="21122763-2335-4bfb-abfd-71999764e0ae" type="0">
+    <message>Generating deployment script.</message>
+    <entry time="2013-09-08T12:41:40.1942065Z" id="8c7ef8d7-f2e0-40d9-9763-e43a97c566da" type="0">
+      <message>Using cached version of deployment script (command: 'azure -y --no-dot-deployment -r "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\repository" -o "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\deployments\tools" --node --sitePath "C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\repository"').</message>
+    </entry>
+  </entry>
+  <entry time="2013-09-08T12:41:40.2254714Z" id="02cb09ad-aa04-4d66-aa21-d4235b2ac4fc" type="0">
+    <message>Running deployment command...</message>
+    <entry time="2013-09-08T12:41:40.2254714Z" id="7fb15e73-fa5a-4117-b3e3-080bd454ddec" type="0">
+      <message>Command: C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\deployments\tools\deploy.cmd</message>
+    </entry>
+    <entry time="2013-09-08T12:41:40.6004513Z" id="1e37d82b-9320-477e-a0aa-f999a5d927c4" type="0">
+      <message>Handling node.js deployment.</message>
+    </entry>
+    <entry time="2013-09-08T12:41:40.8529053Z" id="aca79db2-e328-4e80-a59c-2973ce52227b" type="0">
+      <message>KuduSync.NET from: 'C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\repository' to: 'C:\DWASFiles\Sites\draft-table\VirtualDirectory0\site\wwwroot'</message>
+    </entry>
+    <entry time="2013-09-08T12:41:41.0090658Z" id="ee48d89b-0e35-465b-b6b4-9145351b67b1" type="0">
+      <message>The package.json file does not specify node.js engine version constraints.</message>
+    </entry>
+    <entry time="2013-09-08T12:41:41.0246363Z" id="c45b89ce-b2b8-4f8f-89f8-b4b83459b98d" type="0">
+      <message>The node.js application will run with the default node.js version 0.10.5.</message>
+    </entry>
+    <entry time="2013-09-08T12:41:42.5716164Z" id="0e597429-6355-4385-b539-1daf3137cb66" type="0">
+      <message>Finished successfully.</message>
+    </entry>
+  </entry>
+  <entry time="2013-09-08T12:41:42.6028391Z" id="9cbf837c-3fae-4ff7-9c0c-fcd130bef6b8" type="0">
+    <message>Deployment successful.</message>
+  </entry>
+</entries>
