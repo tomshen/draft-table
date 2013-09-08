@@ -28,18 +28,18 @@
     background: -moz-linear-gradient(top, #1086c8, #1fa3ed); }
 
 .new-proposal-button {
-  border: solid 1px #1fc834;
-  background: #24dd3b;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3ae04f), to(#1fc834));
-  background: -moz-linear-gradient(top, #3ae04f, #1fc834); }
+  border: solid 1px #ef9003;
+  background: #fc9d10;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fca729), to(#ef9003));
+  background: -moz-linear-gradient(top, #fca729, #ef9003); }
   .new-proposal-button:hover {
-    background: #1fc834;
-    background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
-    background: -moz-linear-gradient(top, #24dd3b, #1cb22e); }
+    background: #ef9003;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fc9d10), to(#d68103));
+    background: -moz-linear-gradient(top, #fc9d10, #d68103); }
   .new-proposal-button:active {
-    background: #24dd3b;
-    background: -webkit-gradient(linear, left top, left bottom, from(#1fc834), to(#3ae04f));
-    background: -moz-linear-gradient(top, #1fc834, #3ae04f); }
+    background: #fc9d10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ef9003), to(#fca729));
+    background: -moz-linear-gradient(top, #ef9003, #fca729); }
 
 .supporters-button {
   border: solid 1px #1fc834;
@@ -125,7 +125,8 @@ html, body {
 .plan-container {
   position: relative;
   box-shadow: 0px 2px 5px black;
-  padding: 22px 0;
+  padding: 22px 0 0 0;
+  margin-bottom: 44px;
   background-color: #f1f1dc;
   width: -moz-calc(-1 * 231px + 100%);
   width: -webkit-calc(-1 * 231px + 100%);
@@ -167,14 +168,17 @@ html, body {
     background-size: cover;
     background-position: center; }
 
-.proposals-container {
+.proposals-background {
+  border-top: 1px solid #b1b1a6;
   background: #e5e5d3;
-  padding: 0 44px;
-  border-top: 1px solid #b1b1a6; }
-  .proposals-container .proposal, .proposals-container .new-proposal-button {
-    background-color: #f1f1dc;
-    border-left: 1px solid #b1b1a6;
-    border-right: 1px solid #b1b1a6; }
+  padding: 0 44px 44px 44px; }
+
+.proposals-container {
+  background-color: #f1f1dc;
+  border-left: 1px solid #b1b1a6;
+  border-right: 1px solid #b1b1a6;
+  border-bottom: 1px solid #b1b1a6;
+  padding-bottom: 44px; }
   .proposals-container .proposal-title, .proposals-container .proposal-supporters, .proposals-container .proposal-author, .proposals-container .comment-attribution {
     font-family: "myriad-pro", helvetica, tahoma, sans-serif;
     font-weight: 400;
@@ -199,3 +203,5 @@ html, body {
       font-weight: 700; }
     .proposals-container .proposal-comment .comment-date {
       opacity: 0.5; }
+  .proposals-container .new-proposal-button {
+    margin-left: 44px; }
