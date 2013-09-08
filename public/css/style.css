@@ -49,6 +49,7 @@
   display: inline;
   margin-left: 60px;
   line-height: 2; }
+  margin-left: 66px; }
   .supporters-button:hover {
     background: #1fc834;
     background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
