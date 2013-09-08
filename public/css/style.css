@@ -168,6 +168,8 @@ html, body {
     min-height: 440px;
     background-size: cover;
     background-position: center; }
+  .plan-container .image + .image {
+    margin-top: 44px; }
   .plan-container .map-container {
     min-height: 440px;
     width: 100%; }

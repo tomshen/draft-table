@@ -247,6 +247,10 @@ html, body {
 		background-position: center;
 	}
 
+	.image + .image {
+		margin-top: 2 * $line-height;
+	}
+
 	.map-container {
 		min-height: $line-height * 20;
 		width: 100%;
