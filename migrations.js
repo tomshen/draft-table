@@ -71,15 +71,10 @@ var plan1 = {
       type: "image",
       _class: "",
       content: "/public/img/new-college-house-top-right-01.jpg"
-    }, 
-    {
-      type: "model",
-      _class: "",
-      content: "c7aabd879170400e8a0f4ce177d61903"
     }, {
       type: "location",
       _class: "",
-      content: [39.953438,-75.190927]
+      content: [39.948043, -75.193416]
     }
   ]
 };
@@ -97,7 +92,7 @@ var plan2 = {
     }, {
       type: "text",
       _class: "",
-      content: "The New College House will establish a gateway to campus, as it is located at a key pedestrian approach from the northeastern corner of the University. It will be the first building one encounters coming from the 30th Street Amtrak and Regional Rail Station, and will front onto Woodland Walk, one of the three main pedestrian paths identified in the Campus Development Plan. A new public open space or commons will enliven the center of this important residential quadrangle."
+      content: "The focus of the School of Medicine’s Translational Research Center will be to house research initiatives that integrate the range of biomedical disciplines required to achieve advances in the understanding of disease and the development of new therapies."
     }, {
       type: "text",
       _class: "subheader",
@@ -131,26 +126,26 @@ var plan2 = {
       _class: "",
       content: "/public/img/conference-room-table-view-01.jpg"
     }, 
-    {
+     {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-02.jpg"
     }, 
-    {
+     {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-table-view-02.jpg"
     }, 
-    {
+     {
       type: "image",
       _class: "",
       content: "/public/img/conference-room-sketch-people-03.png"
     }, {
       type: "location",
       _class: "",
-      content: [39.947467,-75.192686]
+      content: [39.953067, -75.190902]
     }
   ]
 };
 
-module.exports = {school: penn, plan: plan1}
+module.exports = {school: penn, plan1: plan1, plan2: plan2}
