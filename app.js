@@ -71,7 +71,7 @@ app.post('/plan/:plan/support', function(req, res) {
 
 app.post('/school/:school/plan/:plan/proposal/new', function(req, res) {
   return models.Plan.addProposal(req.params.plan, req.body, req.files, function(id) {
-    return res.redirect(("/" + req.params.school) + '/#' + ("" + req.params.plan));
+    return res.redirect(("/" + req.params.school) + '#' + ("" + req.params.plan));
   });
 });
 

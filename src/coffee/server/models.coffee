@@ -6,7 +6,7 @@ uploads = require './uploads.js'
 log = console.log
 # w:0 gets rid of the default write concern message, but may be unsafe for production since it doesn't force acknowledgement
 # of writes to the DB
-db = mongo.db(process.env.CUSTOMCONNSTR_MONGOLAB_URI, {w: 0})
+db = mongo.db("mongodb://127.0.0.1/test", {w: 0})
 
 pluralize = (word) ->
   word + 's'
@@ -57,7 +57,7 @@ School.get = (school_id, callback) ->
   db.collection('schools').findById school_id, (err, doc) ->
     try
       async.map doc.plans, (plan_id, callbackOnComplete) ->
-        db.collection('plans').findById(plan_id, callbackOnComplete)
+        Plan.get(plan_id, callbackOnComplete)
       ,(err, plans2) ->
         doc.plans = plans2
         callback undefined, doc
@@ -157,7 +157,7 @@ Plan.addProposal = (plan_id, proposal, files, callback) ->
       createDocWithParent 'proposal', plan_id, proposal_doc, 'proposals', 'plans', callback
   )
 
-# callback: (plan) ->
+# callback: (err, plan) ->
 Plan.get = (plan_id, callback)->
   db.collection('plans').findById plan_id, (err, doc) ->
     try
@@ -207,7 +207,7 @@ migrations = require './migrations.js'
 console.log "i am being deployed on azure"
 
 School.create migrations.school, (_id)->
-  console.log "IDENTIFY IDENTIFY"
+  console.log "111 THIS IS THE RIGHT ONE"
   console.log "School _id is #{_id}"
   School.addPlan(_id, migrations.plan1, {}, (plan_id)->
     console.log "Plan _id is #{plan_id}"

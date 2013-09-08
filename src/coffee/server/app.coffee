@@ -43,7 +43,7 @@ app.post '/plan/:plan/support', (req, res) ->
 
 app.post '/school/:school/plan/:plan/proposal/new', (req, res) ->
   models.Plan.addProposal req.params.plan, req.body, req.files, (id) -> 
-    res.redirect "/#{req.params.school}" + '/#' + "#{req.params.plan}" 
+    res.redirect "/#{req.params.school}" + '#' + "#{req.params.plan}" 
 
 app.post '/proposal/:proposal/support', (req, res) ->
   models.Proposal.addSupporter req.params.proposal, req.body

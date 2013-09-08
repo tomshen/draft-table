@@ -13,7 +13,7 @@ uploads = require('./uploads.js');
 
 log = console.log;
 
-db = mongo.db(process.env.CUSTOMCONNSTR_MONGOLAB_URI, {
+db = mongo.db("mongodb://127.0.0.1/test", {
   w: 0
 });
 
@@ -86,7 +86,7 @@ School.get = function(school_id, callback) {
     var e;
     try {
       return async.map(doc.plans, function(plan_id, callbackOnComplete) {
-        return db.collection('plans').findById(plan_id, callbackOnComplete);
+        return Plan.get(plan_id, callbackOnComplete);
       }, function(err, plans2) {
         doc.plans = plans2;
         return callback(void 0, doc);
@@ -271,7 +271,7 @@ migrations = require('./migrations.js');
 console.log("i am being deployed on azure");
 
 School.create(migrations.school, function(_id) {
-  console.log("IDENTIFY IDENTIFY");
+  console.log("111 THIS IS THE RIGHT ONE");
   console.log("School _id is " + _id);
   return School.addPlan(_id, migrations.plan1, {}, function(plan_id) {
     console.log("Plan _id is " + plan_id);
