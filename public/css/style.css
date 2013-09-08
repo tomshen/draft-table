@@ -291,7 +291,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .prominent-input-container:before {
     content: "Prominent Text Node";
@@ -299,7 +298,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .subheader-input-container:before {
     content: "Subheader Node";
@@ -307,7 +305,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .image-input-container:before {
     content: "Image Node";
@@ -315,7 +312,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .image-strip-input-container:before {
     content: "Multi Image Node";
@@ -323,7 +319,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .model-input-container:before {
     content: "Model Input Node";
@@ -331,7 +326,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .location-input-container:before {
     content: "Location Input Node";
@@ -339,7 +333,6 @@ form {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 700;
     display: block; }
   form .location-input-container, form .model-input-container, form .image-strip-input-container, form .image-input-container, form .subheader-input-container, form .prominent-input-container, form .prominent-input-container, form .text-input-container {
     margin-top: 22px; }
