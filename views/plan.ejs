@@ -1,14 +1,14 @@
 <% layout('layout') -%>
 
-<div class="plan-container" id="<%= 'plan' + _id %>">
-	<div class="plan-title"> <%= title %> </div>
+<div class="plan-container" id="<%= 'plan' + plan._id %>">
+	<div class="plan-title"> <%= plan.title %> </div>
 
 	<div class="interaction-buttons-container">
 		<!-- TODO: make this button link to the proposals at the bottom of the page -->
-		<div class="proposals-label"> <%= proposal.length %> proposals</div>
+		<div class="proposals-label"> <%= plan.proposals.length %> proposals</div>
 		<!-- TODO: make this button display a list of supporters on hover -->
 		<!-- TODO: make this button send a post to /plan/{plan}/support on click-->
-		<div class="supporters-label"> <%= supporter.length %> supporters</div>
+		<div class="supporters-label"> <%= plan.supporters.length %> supporters</div>
 	</div>
 
 	<div class="plan-content-container">
@@ -19,7 +19,7 @@
 		<div class="proposals-container">
 			<!-- insert proposals -->
 
-			<a class="button new-proposal-button" href="/proposal/new">Make a new proposal</a>
+			<a class="button new-proposal-button" href="/<%=schoolId%>/<%=plan._id%>/new">Make a new proposal</a>
 
 		</div>
 	</div>

@@ -3,7 +3,7 @@ path = require 'path'
 http = require 'http'
 _ = require 'underscore'
 
-models = require './models' 
+models = require './models'
 
 app = express()
 
@@ -25,7 +25,7 @@ app.get '/:school', (req, res) ->
 
 app.get '/:school/:plan', (req, res) ->
   models.Plan.get req.params.plan, (err, plan) ->
-    res.render 'plan', plan
+    res.render 'plan', { plan: plan, schoolId: req.params.school._id }
 
 app.get '/:school/:plan/proposal/new', (req, res) ->
   models.School.get req.params.school, (err, school) ->

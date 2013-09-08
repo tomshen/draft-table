@@ -54,14 +54,27 @@ School.update = (_id, update_object) ->
 
 # callback (err, doc) -> ...
 School.get = (school_id, callback) ->
-  db.collection('schools').findById(school_id, (err, doc)->
-    async.map doc.plans, (plan_id, callback)->
-      db.collection('plans').findById plan_id, callback
-    , (err, array_of_plans)->
-      doc.plans = array_of_plans
-      callback null, doc
-  )
+  db.collection('schools').findOne school_id, (err, doc) ->
+    async.map doc.plans, (plan_id, callbackOnComplete) ->
+      db.collection('plans').findOne(plan_id, callbackOnComplete)
+    ,(err, plans) ->
+      doc.plans = plans
+      callback err, doc
 
+
+###
+  db.collection('schools').findById(school_id, (err, doc)->
+    async.map(doc.plans, (plan_id, cb2) ->
+        db.collection('plans').findById(plan_id, (err, transformed)->
+          cb2 null, transformed
+        )
+    ,(err, array_of_plans)->
+      console.log array_of_plans
+      doc.plans = array_of_plans
+      callback(null, doc)
+    )
+  )
+###
 # callback : (plan_id) -> ...
 School.addPlan = (school_id, plan, files, callback) ->
   createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback
