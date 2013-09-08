@@ -71,7 +71,13 @@ var plan1 = {
       type: "image",
       _class: "",
       content: "/public/img/new-college-house-top-right-01.png"
-    }, {
+    }, 
+    {
+      type: "model",
+      _class: "",
+      content: "c7aabd879170400e8a0f4ce177d61903"
+    },
+    {
       type: "location",
       _class: "",
       content: [39.948043, -75.193416]

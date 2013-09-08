@@ -207,6 +207,7 @@ migrations = require './migrations.js'
 console.log "i am being deployed on azure"
 
 School.create migrations.school, (_id)->
+  console.log "IDENTIFY IDENTIFY"
   console.log "School _id is #{_id}"
   School.addPlan(_id, migrations.plan1, {}, (plan_id)->
     console.log "Plan _id is #{plan_id}"

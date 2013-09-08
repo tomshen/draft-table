@@ -271,6 +271,7 @@ migrations = require('./migrations.js');
 console.log("i am being deployed on azure");
 
 School.create(migrations.school, function(_id) {
+  console.log("IDENTIFY IDENTIFY");
   console.log("School _id is " + _id);
   return School.addPlan(_id, migrations.plan1, {}, function(plan_id) {
     console.log("Plan _id is " + plan_id);
