@@ -3,7 +3,7 @@ formData = require 'form-data'
 fs = require 'fs'
 
 # modelFile = req.files.model
-# callback = (err, sketchfabId) -> ...
+# callback = (err, sketchfabId) -> ... 
 uploadModel = (title, modelFile, callback) ->
   fs.readFile modelFile.path (err, data) ->
     form = new formData()
@@ -40,3 +40,6 @@ uploadImage = (imageFile, callback) ->
     newPath = __dirname + '/public/img/' + fileName
     fs.writeFile newPath, data, (err) ->
       callback err, fileName
+
+
+module.exports = {uploadImage: uploadImage, uploadModel: uploadModel}

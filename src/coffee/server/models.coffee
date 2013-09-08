@@ -1,10 +1,18 @@
-mongo = require 'mongoskin', _ = require 'underscore', log = console.log
+mongo = require 'mongoskin'
+_ = require 'underscore'
+moment = require 'moment'
+async = require 'async'
+uploads = require './uploads.js'
+log = console.log
 # w:0 gets rid of the default write concern message, but may be unsafe for production since it doesn't force acknowledgement
 # of writes to the DB
 db = mongo.db('localhost:27017/test', {w: 0})
 
 pluralize = (word) ->
   word + 's' 
+
+isNumber = (n) ->
+  return !isNaN(parseFloat(n)) and isFinite(n);
 
 # Replacement for create; callback: (doc_id) ->
 createDocWithParent = (type, parent_id, doc, collectionName, parentCollectionName, callback)->
@@ -48,14 +56,98 @@ School.get = (school_id, callback) ->
   db.collection('schools').findById(school_id, callback)
 
 # callback : (plan_id) -> ...
-School.addPlan = (school_id, plan, callback) ->
-  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback
+School.addPlan = (school_id, plan, files, callback) ->
+  createDocWithParent 'plan', school_id, plan, 'plans', 'schools', callback 
 
+
+makeElement = (elementName, content, _class)->
+  elementIndex = elementName.replace(/\D/g,'')
+  type = elementName.split('-')[1]
+  ans =  {type: type, index: elementIndex, content: content}
+  if _class
+    ans._class = _class
+  return ans
+
+# Text is working!!!
 
 Plan = {}
 #Callback: (proposal_id)-> ...
-Plan.addProposal = (plan_id, proposal, callback) ->
-  createDocWithParent 'proposal', plan_id, proposal, 'proposals', 'plans', callback
+Plan.addProposal = (plan_id, proposal, files, callback) ->
+  proposal_doc = {timestamp: moment().valueOf(), title: proposal.title, author: proposal.author, comments: [], supporters: []}
+  elements = []
+  _.chain(proposal).pairs().filter(
+    (pair) -> return pair[0].indexOf('elt-text-') > -1
+  ).each(
+    (pair)->
+      _class = pair[0].split('-')[2]
+      if isNumber(_class) 
+        _class = undefined
+      element = makeElement pair[0], pair[1], _class
+      elements.push element
+  )
+  locationInputPairs = _.chain(proposal).pairs().filter(
+    (pair) -> return pair[0].indexOf('elt-location-') > -1
+  ).each((pair)->
+    element = makeElement pair[0], pair[1].split(',')
+    elements.push element
+  )
+  model_pairs = _.chain(files).pairs().filter((pair)->
+    pair[0].indexOf('elt-model-') > -1
+  ).value()
+
+  image_pairs = _.chain(files).pairs().filter((pair)->
+    pair[0].indexOf('elt-image-') > -1
+  ).value()
+
+  images_pairs = _.chain(files).pairs().filter((pair)->
+    pair[0].indexOf('elt-images-') > -1
+  ).value()
+
+  async.parallel(
+    [
+      (done) ->
+        async.each model_pairs, (item, callback)->
+          #stub - make this model into an element and append that to elements
+          uploads.uploadModel(proposal.title, item[1], (err, sketchfab_id)->
+            if err
+              throw err
+            element = makeElement item[0], sketchfab_id
+            elements.push element
+            callback()
+          )
+        , done
+      , (done) ->
+        async.each image_pairs, (item, callback)->
+          uploads.uploadImage(item[1], (err, fileName)->
+            if err
+              throw err
+            element = makeElement item[0], fileName
+            elements.push element
+            callback()
+          )
+        , done
+      , (done) ->
+        async.each images_pairs, (item, callback)->
+          #stub - make this images object into an element and append that to elements
+          array_of_images = _.flatten(item[1])
+          file_names = []
+          async.each(array_of_images, (file, cb)->
+            uploads.uploadImage(file, (err, fileName)->
+              if err 
+                throw err
+              file_names.push fileName
+              cb()
+            )
+          , (err)->
+            element = makeElement item[0], file_names
+            elements.push element
+            callback()
+          )
+        , done
+    ], () ->
+      proposal_doc.elements = elements
+      createDocWithParent 'proposal', plan_id, proposal_doc, 'proposals', 'plans', callback
+  )
 
 # callback: (plan) ->
 Plan.get = (plan_id, callback)->
@@ -83,9 +175,8 @@ Proposal.addElement = (proposal_id, element) ->
   updateByPush proposal_id, element, 'elements', 'proposals'
 
 Proposal.addComment = (proposal_id, comment) ->
+  comment.timestamp = moment().valueOf()
   updateByPush proposal_id, comment, 'comments', 'proposals'
-  #stub
-
 
 
 methods = 
