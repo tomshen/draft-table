@@ -86,7 +86,7 @@ var plan1 = {
 
 var plan2 = {
   title: "Translational Research Center, School of Medicine",
-  image_thumbnail: "/public/img/college_house_thumb.jpg",
+  image_thumbnail: "/public/img/TRC-thumb.jpg",
   supporters: [],
   proposals: [],
   elements: [
