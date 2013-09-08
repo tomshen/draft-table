@@ -45,7 +45,9 @@
   border: solid 1px #1fc834;
   background: #24dd3b;
   background: -webkit-gradient(linear, left top, left bottom, from(#3ae04f), to(#1fc834));
-  background: -moz-linear-gradient(top, #3ae04f, #1fc834); }
+  background: -moz-linear-gradient(top, #3ae04f, #1fc834);
+  display: inline;
+  margin-left: 66px; }
   .supporters-button:hover {
     background: #1fc834;
     background: -webkit-gradient(linear, left top, left bottom, from(#24dd3b), to(#1cb22e));
@@ -166,6 +168,8 @@ html, body {
     min-height: 440px;
     background-size: cover;
     background-position: center; }
+  .plan-container .image + .image {
+    margin-top: 44px; }
   .plan-container .map-container {
     min-height: 440px;
     width: 100%; }
@@ -186,17 +190,17 @@ html, body {
     font-weight: 400;
     font-size: 18px; }
   .proposals-container .proposal {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-    cursor: pointer;
     padding: 0.2em 0; }
     .proposals-container .proposal .proposal-toggle, .proposals-container .proposal .proposal-title, .proposals-container .proposal .proposal-supporters {
-      display: inline; }
+      display: inline;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      cursor: pointer; }
     .proposals-container .proposal .proposal-toggle {
       margin-left: 11px; }
     .proposals-container .proposal:not(.open) .proposal-toggle:before {
@@ -239,9 +243,96 @@ form {
   background-color: #f1f1dc;
   max-width: 440px;
   margin: 44px auto;
-  padding: 22px; }
+  padding: 22px;
+  overflow: hidden; }
   form .form-title {
     font-family: "myriad-pro", helvetica, tahoma, sans-serif;
     font-weight: 700;
     letter-spacing: -0.04em;
-    font-size: 36px; }
+    font-size: 36px;
+    margin-bottom: 22px;
+    clear: both; }
+  form * {
+    float: left;
+    clear: both; }
+  form li, form ul {
+    margin: 0;
+    padding: 0; }
+  form ul:before {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    content: "Add a Node:";
+    display: block; }
+  form ul {
+    padding: 22px 0; }
+  form button, form input {
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif; }
+  form button[type="submit"] {
+    border: solid 1px #ef9003;
+    background: #fc9d10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fca729), to(#ef9003));
+    background: -moz-linear-gradient(top, #fca729, #ef9003);
+    border-radius: 4px;
+    color: white; }
+    form button[type="submit"]:hover {
+      background: #ef9003;
+      background: -webkit-gradient(linear, left top, left bottom, from(#fc9d10), to(#d68103));
+      background: -moz-linear-gradient(top, #fc9d10, #d68103); }
+    form button[type="submit"]:active {
+      background: #fc9d10;
+      background: -webkit-gradient(linear, left top, left bottom, from(#ef9003), to(#fca729));
+      background: -moz-linear-gradient(top, #ef9003, #fca729); }
+  form .text-input-container:before {
+    content: "Text Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .prominent-input-container:before {
+    content: "Prominent Text Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .subheader-input-container:before {
+    content: "Subheader Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .image-input-container:before {
+    content: "Image Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .image-strip-input-container:before {
+    content: "Multi Image Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .model-input-container:before {
+    content: "Model Input Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .location-input-container:before {
+    content: "Location Input Node";
+    font-family: "myriad-pro", helvetica, tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: block; }
+  form .location-input-container, form .model-input-container, form .image-strip-input-container, form .image-input-container, form .subheader-input-container, form .prominent-input-container, form .prominent-input-container, form .text-input-container {
+    margin-top: 22px; }

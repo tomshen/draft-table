@@ -1,6 +1,6 @@
 <!-- map -->
 <div class="map-container">
-  <div class="map <%= _class %>" id="map-<%= content[0] %>-<%= content[0] %>"></div>
+  <div class="map <% if(locals._class) { _class } %>" id="map-<%= content[0] %>-<%= content[0] %>"></div>
 
   <script type="text/javascript">
     var pos = new google.maps.LatLng(<%= content[0] %>,<%= content[1] %>);

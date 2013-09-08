@@ -1,6 +1,4 @@
-<% layout('layout') -%>
-
-<div class="plan-container" id="<%= 'plan' + plan._id %>">
+<div class="plan-container" id="<%= plan._id %>">
 	<div class="plan-title"> <%= plan.title %> </div>
 
 	<div class="interaction-buttons-container">
@@ -9,21 +7,23 @@
 		<!-- TODO: make this button display a list of supporters on hover -->
 		<!-- TODO: make this button send a post to /plan/{plan}/support on click-->
 		<div class="supporters-label"> <%= plan.supporters.length %> supporters</div>
+
+
+		<div class="button supporters-button plan-support" data-plan-id="<%= plan._id %>">support this plan</div>
 	</div>
 
 	<div class="plan-content-container">
-		<!-- TODO: write logic to insert the elements of the proposal -->
+		<% plan.elements.forEach(function (el, index) { %>
+			<%- partial('partials/' + el.type, el) %>
+		<% }); %>
 	</div>
 
 	<div class="proposals-background">
 		<div class="proposals-container">
-			<!-- insert proposals -->
-
-			<a class="button new-proposal-button" href="/<%=schoolId%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
-
+			<% plan.proposals.forEach(function (proposal, index) { %>
+				<%- partial('proposal', proposal) %>
+			<% }); %>
+			<a class="button new-proposal-button" href="/<%=school._id%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
 		</div>
 	</div>
-
-
-
 </div>

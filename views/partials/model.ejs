@@ -2,7 +2,7 @@
 <!-- 3d model -->
 <div class="model-container">
   <a href="/public/models/<%= content %>.dae">Download model</a>
-  <div class="model <%= _class %>" id="<%= 'model-' + content %>"></div>
+  <div class="model <% if(locals._class) { _class } %>" id="<%= 'model-' + content %>"></div>
   <script type="text/javascript">
     window.drawModel('<%= content %>');
   </script>
