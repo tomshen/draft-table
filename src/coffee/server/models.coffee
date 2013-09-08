@@ -74,8 +74,6 @@ makeElement = (elementName, content, _class)->
     ans._class = _class
   return ans
 
-# Text is working!!!
-
 Plan = {}
 #Callback: (proposal_id)-> ...
 Plan.addProposal = (plan_id, proposal, files, callback) ->
