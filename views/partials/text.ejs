@@ -1,5 +1,5 @@
 
 <!-- body text -->
-<p class="body-text <% if(locals._class) { _class } %>">
+<p class="body-text <% if(typeof _class == 'undefined') { _class } %>">
 	<%= content %>
 </p>
