@@ -1,23 +1,28 @@
 $line-height: 22px;
 $base-text-size: 18px;
 
-$body-stack: "Adelle", georgia;
-$title-stack: "Myriad Pro", helvetica, tahoma, sans-serif;
+$body-stack: "chaparral-pro", georgia;
+$title-stack: "myriad-pro", helvetica, tahoma, sans-serif;
 
 $background-color: #111114;
 $foreground-color: #F1F1DC;
+
+$proposal-color: #1296E0;
+$supporter-color: #24DD3B;
+$new-proposal-color: #24DD3B;
 
 $shadow-primary-tier: 0px 5px 5px black;
 $shadow-secondary-tier: 0px 2px 5px black;
 
 $shadow-text: 0px 1px 0.1em rgba(0, 0, 0, 0.7),
 			  0px 0px 1px rgba(0, 0, 0, 0.7);
+$light-shadow-text: 0px 1px 0.1em rgba(0, 0, 0, 0.2);
 
 
 $proposals-background: #E5E5D3;
 $proposals-border-color: #B1B1A6;
 
-$nav-width:  10.8 * $line-height;
+$nav-width:  10.5 * $line-height;
 
 @mixin covered-image  {
 	background-size: cover;
@@ -59,8 +64,46 @@ $nav-width:  10.8 * $line-height;
 	cursor: pointer;
 }
 
+@mixin button-gradient($color) {
+	border: solid 1px darken($color, 5%);
+	background: $color;
+	background: -webkit-gradient(linear, left top, left bottom, from(lighten($color, 5%)), to(darken($color, 5%)));
+	background: -moz-linear-gradient(top,  lighten($color, 5%),  darken($color, 5%));
+
+	&:hover {
+		background: darken($color, 5%);
+		background: -webkit-gradient(linear, left top, left bottom, from($color), to(darken($color, 10%)));
+		background: -moz-linear-gradient(top,  $color,  darken($color, 10%));
+
+	}
+	&:active {
+		background: $color;
+		background: -webkit-gradient(linear, left top, left bottom, from(darken($color, 5%)), to(lighten($color, 5%)));
+		background: -moz-linear-gradient(top,  darken($color, 5%),  lighten($color, 5%));
+
+	}
+}
+
+.button {
+	@include button;
+	padding: 0.2em 0.3em;
+	text-align: center;
+	color: white;
+	border-radius: 0.5em;
+	text-shadow: $light-shadow-text;
+}
+.proposals-button {
+	@include button-gradient($proposal-color);
+}	
+.new-proposal-button {
+	@include button-gradient($new-proposal-color);
+}	
+.supporters-button {
+	@include button-gradient($supporter-color);
+}
+
 html, body {
-	font-family: "adelle", georgia;
+	font-family: $body-stack;
 	font-size: 14px;
 	background-color: $background-color;
 }
@@ -89,7 +132,7 @@ html, body {
 	position: absolute;
 	left: 0;
 	color: white;
-	width: $nav-width;
+	z-index: 500;
 
 	.nav-plan {
 		@include button;
@@ -119,8 +162,17 @@ html, body {
 	}
 }
 
-.plan-container {
 
+
+.interaction-buttons-container {
+	position: absolute;
+	right: 2 * $line-height;
+	top: 1 * $line-height + 8px + 3 * $base-text-size;
+	@include label-text;
+}
+
+.plan-container {
+	position: relative;
 	box-shadow: $shadow-secondary-tier;
 	$plan-padding: 2 * $line-height;
 	padding: $plan-padding/2 0;
@@ -150,6 +202,7 @@ html, body {
 
 		padding-top: $padding-remainder * (2/3);
 		padding-bottom: $padding-remainder / 3;
+		margin-right: 5 * $line-height;
 	}
 
 	.body-text {
@@ -179,7 +232,6 @@ html, body {
 		font-size: 1.5 * $base-text-size;
 		line-height: 1.5 * $line-height;
 		font-style: italic;
-		font-weight: 300;
 	}
 
 	.image.full-bleed {
@@ -195,20 +247,45 @@ html, body {
 	padding: 0 2 * $line-height;
 	border-top: 1px solid $proposals-border-color;
 
-	.proposal {
+	.proposal, .new-proposal-button {
 		background-color: $foreground-color;
 		border-left: 1px solid $proposals-border-color;
 		border-right: 1px solid $proposals-border-color;
 	}
 
-	.proposal-content, .proposal-comments {
+	.proposal-title, .proposal-supporters, .proposal-author, .comment-attribution {
+		@include subhead-text;
+		font-size: $base-text-size;
+		background-color: $foreground-color;
+
+	}
+
+	.proposal-extras{
 		overflow: hidden;
 		max-height: 0;
-		-webkit-transition: max-height 3s ease-in-out;
-		   -moz-transition: max-height 3s ease-in-out;
-		        transition: max-height 3s ease-in-out;
+		-webkit-transition: max-height 2s ease-in-out;
+		   -moz-transition: max-height 2s ease-in-out;
+		        transition: max-height 2s ease-in-out;
 	}
-	.proposal.open .proposal-content, .proposal.open .proposal-comments{
-		max-height: 1000px;
+	.proposal.open .proposal-extras{
+		max-height: 1500px;
+	}
+
+	.proposal-comment {
+		margin: $line-height 0 $line-height 2 * $line-height;
+		padding-left: $line-height;
+		line-height: $line-height;
+		font-size: $base-text-size * 0.75;
+		border-left: 1px solid rgba(0,0,0,0.3);
+
+		max-width: 30 * $line-height;
+
+		.comment-author {
+			font-weight: 700;
+		}
+
+		.comment-date {
+			opacity: 0.5;
+		}
 	}
 }
