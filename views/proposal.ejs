@@ -1,22 +1,22 @@
-<% layout('layout') -%>
-
-<div class="proposal <% if(active) print('active') %> " id="<%= 'proposal' + id %>">
+<div class="proposal active" id="<%= 'proposal' + _id %>">
 	<div class="proposal-toggle"></div>
 	<div class="proposal-title"><%= title %></div>
 	<div class="proposal-supporters"><%= supporters.length %> supporter </div>
 	<div class="proposal-author"><%= author %></div>
 	<div class="proposal-extras">
 		<div class="proposal-content">
-			<% for(var i = 0; i < elements.length; i++) { %>
-				<% partial('/partials' + elements[i].type, elements[i]) %>
-			<% } %>
+			<% elements.forEach(function (el, index) { %>
+				<%- partial('partials/' + el.type, el) %>
+			<% }); %>
 		</div>
 
 		
 	<div class="button supporters-button">support this proposal</div>
 
 		<div class="proposal-comments ">
-			<!-- add comments here -->
+			<% comments.forEach(function (el, index) { %>
+				<%- partial('partials/comment', el) %>
+			<% }); %>
 		</div>
 	</div>
 </div>

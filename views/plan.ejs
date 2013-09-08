@@ -22,9 +22,10 @@
 
 	<div class="proposals-background">
 		<div class="proposals-container">
-
+			<% plan.proposals.forEach(function (proposal, index) { %>
+				<%- partial('proposal', proposal) %>
+			<% }); %>
 			<a class="button new-proposal-button" href="/<%=schoolId%>/<%=plan._id%>/proposal/new">Make a new proposal</a>
-
 		</div>
 	</div>
 
